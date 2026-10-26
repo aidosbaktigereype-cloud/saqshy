@@ -1,0 +1,19 @@
+{% load i18n site_tags %}
+{% if faqs %}
+<section class="section" id="faq">
+  <div class="container container-narrow">
+    <div class="section-head">
+      <span class="eyebrow">{% translate "Вопросы и ответы" %}</span>
+      <h2>{% translate "Частые вопросы" %}</h2>
+    </div>
+    <div class="faq">
+      {% for f in faqs %}
+        <details class="faq-item"{% if forloop.first %} open{% endif %}>
+          <summary>{{ f.question }}<span class="faq-chevron">{% icon "chevron" "icon" 20 %}</span></summary>
+          <div class="faq-answer">{{ f.answer|linebreaks }}</div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,9 @@
+{% load i18n site_tags %}
+<dialog class="modal" id="lead-modal" aria-labelledby="lead-modal-title" data-modal>
+  <div class="modal-card" data-lead-box>
+    <button class="modal-close icon-btn" type="button" aria-label="{% translate 'Закрыть' %}" data-close-modal>{% icon "close" %}</button>
+    <h2 id="lead-modal-title" class="modal-title">{% translate "Перезвоним за 15 минут" %}</h2>
+    <p class="modal-sub">{% translate "Проконсультируем, подберём оборудование и назовём точную цену. Выезд и смета — бесплатно." %}</p>
+    {% include "partials/lead_form.html" with source="callback" form_id="modal" button=_("Жду звонка") %}
+  </div>
+</dialog>

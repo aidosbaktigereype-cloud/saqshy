@@ -1,0 +1,44 @@
+{% load i18n site_tags %}
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-light" href="{% url 'home' %}">
+        <span class="logo-mark">{% icon "shield" "icon" 22 %}</span>
+        <span class="logo-text">{{ BRAND.name }}</span>
+      </a>
+      <p>{% translate "Охранные системы, видеонаблюдение, СКУД и слаботочные сети в Алматы. Проектируем, монтируем, обслуживаем." %}</p>
+      <div class="footer-social">
+        <a href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" aria-label="WhatsApp" data-goal="whatsapp">{% icon "whatsapp" %}</a>
+        <a href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener" aria-label="Telegram" data-goal="telegram">{% icon "telegram" %}</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-title">{% translate "Услуги" %}</h3>
+      <ul class="footer-links">
+        {% for s in NAV_SERVICES %}<li><a href="{{ s.get_absolute_url }}">{{ s.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">{% translate "Компания" %}</h3>
+      <ul class="footer-links">
+        <li><a href="{% url 'case_list' %}">{% translate "Кейсы" %}</a></li>
+        <li><a href="{% url 'about' %}">{% translate "О компании" %}</a></li>
+        <li><a href="{% url 'contacts' %}">{% translate "Контакты" %}</a></li>
+        <li><a href="{% url 'privacy' %}">{% translate "Политика конфиденциальности" %}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">{% translate "Контакты" %}</h3>
+      <ul class="footer-contacts">
+        <li>{% icon "phone" "icon" 18 %}<a href="{{ PHONE_HREF }}" data-goal="phone">{{ BRAND.phone }}</a></li>
+        <li>{% icon "mail" "icon" 18 %}<a href="mailto:{{ BRAND.email }}">{{ BRAND.email }}</a></li>
+        <li>{% icon "pin" "icon" 18 %}<span>{{ BRAND.address }}</span></li>
+        <li>{% icon "clock" "icon" 18 %}<span>{{ BRAND.hours }}</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {{ YEAR }} {{ BRAND.name }}{% if BRAND.legal %} · {{ BRAND.legal }}{% endif %}</span>
+    <span class="footer-note">{% translate "Ajax — товарный знак Ajax Systems. Мы устанавливаем это оборудование и не являемся официальным представителем производителя." %}</span>
+  </div>
+</footer>

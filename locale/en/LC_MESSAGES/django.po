@@ -1,0 +1,523 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: saqshy\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Перейти к содержимому"
+msgstr "Skip to content"
+
+msgid "Отправляем…"
+msgstr "Sending…"
+
+msgid "Проверьте номер телефона"
+msgstr "Please check the phone number"
+
+msgid "Нужно согласие на обработку данных"
+msgstr "Consent to data processing is required"
+
+msgid "Слишком много заявок. Позвоните или напишите нам."
+msgstr "Too many requests. Please call or message us."
+
+msgid "Не удалось отправить. Позвоните или напишите в WhatsApp."
+msgstr "Could not send. Please call or message us on WhatsApp."
+
+msgid "Навигация"
+msgstr "Breadcrumbs"
+
+msgid "Главная"
+msgstr "Home"
+
+msgid "Кейсы"
+msgstr "Case studies"
+
+msgid "Демо-кейс: пример для наполнения сайта."
+msgstr "Demo case: sample content for the website."
+
+msgid "Задача"
+msgstr "Challenge"
+
+msgid "Что сделали"
+msgstr "What we did"
+
+msgid "Оборудование"
+msgstr "Equipment"
+
+msgid "Срок"
+msgstr "Duration"
+
+msgid "Стоимость"
+msgstr "Cost"
+
+msgid "Услуги"
+msgstr "Services"
+
+msgid "Хочу так же"
+msgstr "I want the same"
+
+msgid "Ещё кейсы"
+msgstr "More case studies"
+
+msgid "Наши работы"
+msgstr "Our work"
+
+msgid ""
+"Квартиры, дома, офисы, магазины и склады в Алматы: задача, состав "
+"оборудования, сроки и стоимость."
+msgstr ""
+"Apartments, houses, offices, shops and warehouses in Almaty: the challenge, "
+"equipment, timing and cost."
+
+msgid "Скоро здесь появятся наши объекты."
+msgstr "Our projects will appear here soon."
+
+msgid "Страница не найдена"
+msgstr "Page not found"
+
+msgid ""
+"Возможно, ссылка устарела. Посмотрите наши услуги или вернитесь на главную."
+msgstr ""
+"The link may be outdated. Browse our services or go back to the home page."
+
+msgid "На главную"
+msgstr "Back to home"
+
+msgid "Контакты"
+msgstr "Contacts"
+
+msgid ""
+"Работаем по всему Алматы и пригородам: Талгар, Каскелен, Отеген батыр, "
+"Боралдай."
+msgstr ""
+"We work across Almaty and its suburbs: Talgar, Kaskelen, Otegen Batyr, "
+"Boralday."
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Написать"
+msgstr "Message us"
+
+msgid "Адрес"
+msgstr "Address"
+
+msgid "Время работы"
+msgstr "Working hours"
+
+msgid "Алматы и пригороды"
+msgstr "Almaty and suburbs"
+
+msgid "Охранные системы AJAX, видеонаблюдение и СКУД под ключ"
+msgstr "AJAX security systems, CCTV and access control — turnkey"
+
+msgid ""
+"Подберём оборудование, смонтируем без пыли и настроим управление со "
+"смартфона. Для квартир, домов, офисов и магазинов."
+msgstr ""
+"We select the equipment, install it without mess and set up control from "
+"your smartphone. For apartments, houses, offices and shops."
+
+msgid "Выезд инженера и смета — бесплатно"
+msgstr "Free engineer visit and estimate"
+
+msgid "Монтаж квартиры — обычно за 1 день"
+msgstr "An apartment is usually installed in 1 day"
+
+msgid "Работаем по договору, гарантия на монтаж"
+msgstr "Contract-based work with an installation warranty"
+
+msgid "Рассчитать стоимость"
+msgstr "Get a quote"
+
+msgid "Под охраной"
+msgstr "Armed"
+
+msgid "9 устройств онлайн"
+msgstr "9 devices online"
+
+msgid "Бесплатный расчёт"
+msgstr "Free quote"
+
+msgid "Перезвоним за 15 минут и назовём цену под ваш объект"
+msgstr "We'll call back within 15 minutes with a price for your property"
+
+msgid "выезд и смета"
+msgstr "site visit and estimate"
+
+msgid "от 1 дня"
+msgstr "from 1 day"
+
+msgid "срок монтажа"
+msgstr "installation time"
+
+msgid "Гарантия"
+msgstr "Warranty"
+
+msgid "на работы и оборудование"
+msgstr "on work and equipment"
+
+msgid "Договор"
+msgstr "Contract"
+
+msgid "и фиксированная цена"
+msgstr "and a fixed price"
+
+msgid "Что мы устанавливаем"
+msgstr "What we install"
+
+msgid ""
+"Одна команда для всей безопасности объекта: от датчиков и камер до кабельной"
+" сети."
+msgstr ""
+"One team for all of your property's security: from sensors and cameras to "
+"cabling."
+
+msgid "Подробнее"
+msgstr "Learn more"
+
+msgid "Объекты"
+msgstr "Properties"
+
+msgid "Решения для любого объекта"
+msgstr "Solutions for any property"
+
+msgid "Квартира"
+msgstr "Apartment"
+
+msgid "Беспроводная сигнализация, датчики протечки и дыма, видеоглазок"
+msgstr "Wireless alarm, leak and smoke sensors, video door viewer"
+
+msgid "Частный дом"
+msgstr "House"
+
+msgid "Периметр участка, уличные камеры, управление воротами"
+msgstr "Plot perimeter, outdoor cameras, gate control"
+
+msgid "Офис"
+msgstr "Office"
+
+msgid "СКУД с учётом времени, камеры, локальная сеть и Wi-Fi"
+msgstr "Access control with time tracking, cameras, LAN and Wi-Fi"
+
+msgid "Магазин и кафе"
+msgstr "Shop and café"
+
+msgid "Видеонаблюдение за кассой, тревожная кнопка, доступ с телефона"
+msgstr "Till surveillance, panic button, access from your phone"
+
+msgid "Склад и производство"
+msgstr "Warehouse and factory"
+
+msgid "Уличные камеры, охрана периметра, вывод на пульт охраны"
+msgstr "Outdoor cameras, perimeter protection, monitoring connection"
+
+msgid "Недавние объекты"
+msgstr "Recent projects"
+
+msgid "Все кейсы"
+msgstr "All case studies"
+
+msgid "Почему мы"
+msgstr "Why us"
+
+msgid "Делаем так, чтобы система работала годами"
+msgstr "We build systems that work for years"
+
+msgid ""
+"Охранная система полезна, только если ей доверяют. Поэтому мы не экономим на"
+" монтаже и не исчезаем после оплаты."
+msgstr ""
+"A security system is only useful if you can trust it. So we never cut "
+"corners on installation and we don't disappear after payment."
+
+msgid "Подбор под задачу"
+msgstr "Tailored to your needs"
+
+msgid "Не продаём лишнее: ставим ровно то, что нужно вашему объекту."
+msgstr "No upselling: we install exactly what your property needs."
+
+msgid "Аккуратный монтаж"
+msgstr "Neat installation"
+
+msgid "Прячем кабели, убираем за собой, согласуем точки установки заранее."
+msgstr ""
+"We hide cables, clean up after ourselves and agree on mounting points in "
+"advance."
+
+msgid "Всё в смартфоне"
+msgstr "Everything on your phone"
+
+msgid ""
+"Тревоги, камеры и доступы — в приложении. Научим пользоваться за 10 минут."
+msgstr ""
+"Alarms, cameras and access in one app. We'll show you how to use it in 10 "
+"minutes."
+
+msgid "Сервис после установки"
+msgstr "Service after installation"
+
+msgid "Обслуживание, расширение системы и помощь, если что-то пошло не так."
+msgstr "Maintenance, system expansion and help if something goes wrong."
+
+msgid "от <strong>%(price)s ₸</strong>"
+msgstr "from <strong>%(price)s ₸</strong>"
+
+msgid "Заявка принята!"
+msgstr "Request received!"
+
+msgid ""
+"Перезвоним в течение 15 минут в рабочее время. Если удобнее — напишите нам:"
+msgstr ""
+"We'll call you back within 15 minutes during working hours. Or message us:"
+
+msgid "демо"
+msgstr "demo"
+
+msgid "Бесплатно"
+msgstr "Free"
+
+msgid "Рассчитаем стоимость под ваш объект"
+msgstr "We'll price it for your property"
+
+msgid ""
+"Оставьте телефон — инженер перезвонит, задаст пару вопросов и назовёт цену. "
+"Без навязчивых продаж."
+msgstr ""
+"Leave your number: an engineer will call, ask a couple of questions and give"
+" you a price. No pushy sales."
+
+msgid "Выезд и смета по Алматы — 0 ₸"
+msgstr "Site visit and estimate in Almaty — 0 ₸"
+
+msgid "Цена фиксируется в договоре"
+msgstr "The price is fixed in the contract"
+
+msgid "Гарантия на монтаж и оборудование"
+msgstr "Warranty on installation and equipment"
+
+msgid "Или напишите:"
+msgstr "Or message us:"
+
+msgid "Вопросы и ответы"
+msgstr "Questions and answers"
+
+msgid "Частые вопросы"
+msgstr "Frequently asked questions"
+
+msgid ""
+"Охранные системы, видеонаблюдение, СКУД и слаботочные сети в Алматы. "
+"Проектируем, монтируем, обслуживаем."
+msgstr ""
+"Security systems, CCTV, access control and low-voltage networks in Almaty. "
+"We design, install and maintain."
+
+msgid "Компания"
+msgstr "Company"
+
+msgid "О компании"
+msgstr "About us"
+
+msgid "Политика конфиденциальности"
+msgstr "Privacy policy"
+
+msgid ""
+"Ajax — товарный знак Ajax Systems. Мы устанавливаем это оборудование и не "
+"являемся официальным представителем производителя."
+msgstr ""
+"Ajax is a trademark of Ajax Systems. We install this equipment and are not "
+"an official representative of the manufacturer."
+
+msgid "Основное меню"
+msgstr "Main menu"
+
+msgid "Язык"
+msgstr "Language"
+
+msgid "Войти"
+msgstr "Sign in"
+
+msgid "Заказать звонок"
+msgstr "Request a call"
+
+msgid "Меню"
+msgstr "Menu"
+
+msgid "Имя"
+msgstr "Name"
+
+msgid "Как к вам обращаться"
+msgstr "How should we address you"
+
+msgid "Что нужно установить"
+msgstr "What do you need installed"
+
+msgid "Пока не знаю — нужна консультация"
+msgstr "Not sure yet — I need advice"
+
+msgid "Согласен на обработку персональных данных"
+msgstr "I agree to the processing of my personal data"
+
+msgid "политика"
+msgstr "policy"
+
+msgid "Получить расчёт"
+msgstr "Get a quote"
+
+msgid "Закрыть"
+msgstr "Close"
+
+msgid "Перезвоним за 15 минут"
+msgstr "We'll call back in 15 minutes"
+
+msgid ""
+"Проконсультируем, подберём оборудование и назовём точную цену. Выезд и смета"
+" — бесплатно."
+msgstr ""
+"We'll advise, select the equipment and give you an exact price. Site visit "
+"and estimate are free."
+
+msgid "Жду звонка"
+msgstr "Call me back"
+
+msgid "Написать нам"
+msgstr "Message us"
+
+msgid "Быстрая связь"
+msgstr "Quick contact"
+
+msgid "Позвонить"
+msgstr "Call"
+
+msgid "Заявка"
+msgstr "Request"
+
+msgid "Как мы работаем"
+msgstr "How we work"
+
+msgid "От заявки до работающей системы — 4 шага"
+msgstr "From request to a working system in 4 steps"
+
+msgid "Заявка и консультация"
+msgstr "Request and consultation"
+
+msgid ""
+"Перезваниваем за 15 минут, уточняем задачу и называем ориентир по цене."
+msgstr ""
+"We call back within 15 minutes, clarify the task and give a ballpark price."
+
+msgid "Выезд и смета"
+msgstr "Site visit and estimate"
+
+msgid ""
+"Инженер бесплатно приезжает на объект, подбирает оборудование и фиксирует "
+"цену в смете."
+msgstr ""
+"An engineer visits for free, selects the equipment and fixes the price in an"
+" estimate."
+
+msgid "Монтаж"
+msgstr "Installation"
+
+msgid ""
+"Аккуратно устанавливаем по договору: квартира — обычно за 1 день, без пыли и"
+" лишних проводов."
+msgstr ""
+"Neat installation under contract: an apartment usually takes 1 day, with no "
+"dust or stray wires."
+
+msgid "Настройка и обучение"
+msgstr "Setup and training"
+
+msgid ""
+"Подключаем приложение на ваш телефон, показываем, как пользоваться, и "
+"остаёмся на связи."
+msgstr ""
+"We connect the app on your phone, show you how to use it and stay in touch."
+
+msgid "Под ключ"
+msgstr "Turnkey"
+
+msgid "Рассчитать для моего объекта"
+msgstr "Get a quote for my property"
+
+msgid "перезвоним за 15 минут"
+msgstr "we'll call back within 15 minutes"
+
+msgid "Что входит в работу"
+msgstr "What's included"
+
+msgid "Для каких объектов"
+msgstr "Suitable for"
+
+msgid "Также"
+msgstr "Also"
+
+msgid "Пакеты и цены"
+msgstr "Packages and prices"
+
+msgid "Готовые решения под ключ"
+msgstr "Ready-made turnkey solutions"
+
+msgid ""
+"Оборудование, монтаж и настройка. Точную цену назовём после бесплатного "
+"выезда."
+msgstr ""
+"Equipment, installation and setup. We'll confirm the exact price after a "
+"free site visit."
+
+msgid "Популярный"
+msgstr "Popular"
+
+msgid "Заказать расчёт"
+msgstr "Request a quote"
+
+msgid "Примеры работ"
+msgstr "Examples of our work"
+
+msgid "Другие услуги"
+msgstr "Other services"
+
+msgid "от %(price)s ₸"
+msgstr "from %(price)s ₸"
+
+msgid "<span>от</span> <strong>%(price)s ₸</strong>"
+msgstr "<span>from</span> <strong>%(price)s ₸</strong>"
+
+msgid "Установка охранных систем AJAX, видеонаблюдения и СКУД в Алматы"
+msgstr "AJAX Security Systems, CCTV and Access Control Installation in Almaty"
+
+msgid ""
+"Монтаж сигнализации AJAX, камер видеонаблюдения, СКУД и слаботочных сетей в "
+"Алматы под ключ. Бесплатный выезд и смета, гарантия на работы."
+msgstr ""
+"Turnkey installation of AJAX alarms, CCTV cameras, access control and low-"
+"voltage networks in Almaty. Free site visit and estimate, work warranty."
+
+msgid "Контакты — установка охранных систем в Алматы"
+msgstr "Contacts — Security System Installation in Almaty"
+
+msgid ""
+"Телефон, WhatsApp, Telegram и адрес. Выезд мастера по Алматы и пригородам."
+msgstr ""
+"Phone, WhatsApp, Telegram and address. We visit sites across Almaty and its "
+"suburbs."
+
+msgid "Заявка отправлена"
+msgstr "Request sent"
+
+msgid "Наши работы — кейсы по установке охранных систем в Алматы"
+msgstr "Our Work — Security System Installation Projects in Almaty"
+
+msgid ""
+"Примеры объектов: квартиры, дома, офисы, магазины и склады. Состав, сроки и "
+"стоимость."
+msgstr ""
+"Sample projects: apartments, houses, offices, shops and warehouses. Scope, "
+"timing and cost."
+
+msgid "Здравствуйте! Хочу узнать стоимость установки охранной системы."
+msgstr "Hello! I'd like to know the cost of installing a security system."

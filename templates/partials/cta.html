@@ -1,0 +1,23 @@
+{% load i18n site_tags %}
+<section class="section cta-band" id="request">
+  <div class="container cta-grid">
+    <div class="cta-copy">
+      <span class="eyebrow eyebrow-light">{% translate "Бесплатно" %}</span>
+      <h2>{% translate "Рассчитаем стоимость под ваш объект" %}</h2>
+      <p>{% translate "Оставьте телефон — инженер перезвонит, задаст пару вопросов и назовёт цену. Без навязчивых продаж." %}</p>
+      <ul class="check-list check-list-light">
+        <li>{% icon "check" "icon" 20 %}{% translate "Выезд и смета по Алматы — 0 ₸" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Цена фиксируется в договоре" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Гарантия на монтаж и оборудование" %}</li>
+      </ul>
+      <div class="cta-messengers">
+        <span>{% translate "Или напишите:" %}</span>
+        <a class="btn btn-wa btn-sm" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" data-goal="whatsapp">{% icon "whatsapp" "icon" 18 %} WhatsApp</a>
+        <a class="btn btn-tg btn-sm" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener" data-goal="telegram">{% icon "telegram" "icon" 18 %} Telegram</a>
+      </div>
+    </div>
+    <div class="form-card" data-lead-box>
+      {% include "partials/lead_form.html" with source="form" form_id="cta" service=service %}
+    </div>
+  </div>
+</section>

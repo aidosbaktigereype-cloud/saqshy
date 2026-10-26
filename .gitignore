@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Django
+.env
+db.sqlite3
+db.sqlite3-journal
+/media/
+/staticfiles/
+*.log
+
+# Скомпилированные переводы собираются командой compile_translations
+*.mo
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# Локальные настройки Claude Code
+.claude/

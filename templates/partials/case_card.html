@@ -1,0 +1,19 @@
+{% load i18n site_tags %}
+<article class="case-card">
+  <a class="case-media{% if not case.image %} case-media-empty{% endif %}" href="{{ case.get_absolute_url }}" tabindex="-1" aria-hidden="true">
+    {% if case.image %}
+      <img src="{{ case.image.url }}" alt="{{ case.title }}" loading="lazy" width="640" height="400">
+    {% else %}
+      {% with s=case.main_service %}{% icon s.icon|default:"shield" "icon case-media-icon" 56 %}{% endwith %}
+    {% endif %}
+    {% if case.is_demo %}<span class="badge badge-demo">{% translate "демо" %}</span>{% endif %}
+  </a>
+  <div class="case-body">
+    <div class="case-meta">{{ case.object_type }}{% if case.district %} · {{ case.district }}{% endif %}</div>
+    <h3 class="case-title"><a href="{{ case.get_absolute_url }}">{{ case.title }}</a></h3>
+    <dl class="case-facts">
+      {% if case.duration %}<div><dt>{% translate "Срок" %}</dt><dd>{{ case.duration }}</dd></div>{% endif %}
+      {% if case.amount %}<div><dt>{% translate "Стоимость" %}</dt><dd>{{ case.amount|money }} ₸</dd></div>{% endif %}
+    </dl>
+  </div>
+</article>

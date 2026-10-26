@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="{% translate 'Навигация' %}">
+      <a href="{% url 'home' %}">{% translate "Главная" %}</a><span>/</span>
+      <a href="{% url 'case_list' %}">{% translate "Кейсы" %}</a><span>/</span><span>{{ case.title }}</span>
+    </nav>
+    <h1>{{ case.title }}</h1>
+    <p class="page-lead">{{ case.object_type }}{% if case.district %} · {{ case.district }}{% endif %}</p>
+    {% if case.is_demo %}<p class="demo-note">{% translate "Демо-кейс: пример для наполнения сайта." %}</p>{% endif %}
+  </div>
+</section>
+<section class="section section-top-0">
+  <div class="container case-layout">
+    <div class="prose">
+      {% if case.image %}<img class="case-photo" src="{{ case.image.url }}" alt="{{ case.title }}" width="960" height="600">{% endif %}
+      <h2>{% translate "Задача" %}</h2>
+      {{ case.task|linebreaks }}
+      <h2>{% translate "Что сделали" %}</h2>
+      {{ case.solution|linebreaks }}
+      {% if case.equipment_list %}
+        <h2>{% translate "Оборудование" %}</h2>
+        <ul class="check-list">{% for e in case.equipment_list %}<li>{% icon "check" "icon" 18 %}{{ e }}</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+    <aside class="case-aside">
+      <dl class="fact-list">
+        {% if case.duration %}<div><dt>{% translate "Срок" %}</dt><dd>{{ case.duration }}</dd></div>{% endif %}
+        {% if case.amount %}<div><dt>{% translate "Стоимость" %}</dt><dd>{{ case.amount|money }} ₸</dd></div>{% endif %}
+        {% for s in case.services.all %}{% if forloop.first %}<div><dt>{% translate "Услуги" %}</dt><dd>{% endif %}<a href="{{ s.get_absolute_url }}">{{ s.title }}</a>{% if not forloop.last %}, {% endif %}{% if forloop.last %}</dd></div>{% endif %}{% endfor %}
+      </dl>
+      <button class="btn btn-primary btn-block" type="button" data-open-lead data-source="form">{% translate "Хочу так же" %}</button>
+    </aside>
+  </div>
+</section>
+{% if more_cases %}
+<section class="section section-soft">
+  <div class="container">
+    <h2 class="h3">{% translate "Ещё кейсы" %}</h2>
+    <div class="case-grid">{% for case in more_cases %}{% include "partials/case_card.html" %}{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

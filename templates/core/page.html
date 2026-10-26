@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<section class="page-hero">
+  <div class="container container-narrow">
+    <nav class="breadcrumbs" aria-label="{% translate 'Навигация' %}">
+      <a href="{% url 'home' %}">{% translate "Главная" %}</a><span>/</span><span>{{ page.title }}</span>
+    </nav>
+    <h1>{{ page.title }}</h1>
+    {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
+  </div>
+</section>
+<section class="section section-top-0">
+  <div class="container container-narrow prose">{{ page.body|safe }}</div>
+</section>
+{% if page.slug != "privacy" %}{% include "partials/cta.html" %}{% endif %}
+{% endblock %}

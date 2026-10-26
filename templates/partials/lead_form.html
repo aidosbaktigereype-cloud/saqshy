@@ -1,0 +1,51 @@
+{% load i18n site_tags %}{# Параметры: source, service (объект или None), button, form_id, dark #}
+<form class="lead-form{% if dark %} lead-form-dark{% endif %}" action="{% url 'lead_create' %}" method="post" novalidate data-lead-form>
+  {% csrf_token %}
+  <input type="hidden" name="source" value="{{ source|default:'form' }}">
+  <input type="hidden" name="locale" value="{{ LANG }}">
+  <input type="hidden" name="page" value="">
+  <input type="hidden" name="message" value="">
+  <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
+  <input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="gclid">
+  <input type="hidden" name="yclid"><input type="hidden" name="ym_client_id">
+  <div class="hp" aria-hidden="true">
+    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
+
+  <div class="field">
+    <label for="{{ form_id }}-name">{% translate "Имя" %}</label>
+    <input id="{{ form_id }}-name" type="text" name="name" autocomplete="name" placeholder="{% translate 'Как к вам обращаться' %}" maxlength="120">
+  </div>
+  <div class="field">
+    <label for="{{ form_id }}-phone">{% translate "Телефон" %} <span class="req">*</span></label>
+    <input id="{{ form_id }}-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 7__ ___ __ __" required data-phone>
+    <span class="field-error" data-error="phone"></span>
+  </div>
+  {% if service %}
+    <input type="hidden" name="service" value="{{ service.slug }}">
+  {% else %}
+    <div class="field">
+      <label for="{{ form_id }}-service">{% translate "Что нужно установить" %}</label>
+      <select id="{{ form_id }}-service" name="service">
+        <option value="">{% translate "Пока не знаю — нужна консультация" %}</option>
+        {% for s in NAV_SERVICES %}<option value="{{ s.slug }}">{{ s.title }}</option>{% endfor %}
+      </select>
+    </div>
+  {% endif %}
+  <label class="checkbox">
+    <input type="checkbox" name="consent" value="1" required>
+    <span>{% translate "Согласен на обработку персональных данных" %} — <a href="{% url 'privacy' %}" target="_blank">{% translate "политика" %}</a></span>
+  </label>
+  <span class="field-error" data-error="consent"></span>
+  <button class="btn btn-primary btn-block btn-lg" type="submit">{{ button|default:_("Получить расчёт") }}</button>
+  <p class="form-status" data-status role="status" aria-live="polite"></p>
+</form>
+<div class="lead-success" data-lead-success hidden>
+  <div class="success-icon">{% icon "check" "icon" 28 %}</div>
+  <h3>{% translate "Заявка принята!" %}</h3>
+  <p>{% translate "Перезвоним в течение 15 минут в рабочее время. Если удобнее — напишите нам:" %}</p>
+  <div class="success-actions">
+    <a class="btn btn-wa" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" data-goal="whatsapp">{% icon "whatsapp" "icon" 18 %} WhatsApp</a>
+    <a class="btn btn-tg" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener" data-goal="telegram">{% icon "telegram" "icon" 18 %} Telegram</a>
+  </div>
+</div>

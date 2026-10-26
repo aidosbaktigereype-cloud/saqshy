@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block content %}
+<section class="section">
+  <div class="container container-narrow center">
+    <div class="success-icon success-icon-lg">{% icon "check" "icon" 36 %}</div>
+    <h1>{% translate "Заявка принята!" %}</h1>
+    <p class="page-lead">{% translate "Перезвоним в течение 15 минут в рабочее время. Если удобнее — напишите нам:" %}</p>
+    <div class="success-actions">
+      <a class="btn btn-wa" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" data-goal="whatsapp">{% icon "whatsapp" "icon" 18 %} WhatsApp</a>
+      <a class="btn btn-tg" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener" data-goal="telegram">{% icon "telegram" "icon" 18 %} Telegram</a>
+      <a class="btn btn-outline" href="{% url 'home' %}">{% translate "На главную" %}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="{% translate 'Навигация' %}">
+      <a href="{% url 'home' %}">{% translate "Главная" %}</a><span>/</span><span>{% translate "Кейсы" %}</span>
+    </nav>
+    <h1>{% translate "Наши работы" %}</h1>
+    <p class="page-lead">{% translate "Квартиры, дома, офисы, магазины и склады в Алматы: задача, состав оборудования, сроки и стоимость." %}</p>
+  </div>
+</section>
+<section class="section section-top-0">
+  <div class="container">
+    <div class="case-grid">
+      {% for case in cases %}{% include "partials/case_card.html" %}{% empty %}<p>{% translate "Скоро здесь появятся наши объекты." %}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+{% include "partials/cta.html" %}
+{% endblock %}

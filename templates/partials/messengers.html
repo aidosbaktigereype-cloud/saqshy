@@ -1,0 +1,11 @@
+{% load i18n site_tags %}
+<div class="float-messengers" aria-label="{% translate 'Написать нам' %}">
+  <a class="float-btn float-wa" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" aria-label="WhatsApp" data-goal="whatsapp">{% icon "whatsapp" "icon" 26 %}</a>
+  <a class="float-btn float-tg" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener" aria-label="Telegram" data-goal="telegram">{% icon "telegram" "icon" 24 %}</a>
+</div>
+<nav class="mobile-bar" aria-label="{% translate 'Быстрая связь' %}">
+  <a href="{{ PHONE_HREF }}" data-goal="phone">{% icon "phone" "icon" 20 %}<span>{% translate "Позвонить" %}</span></a>
+  <a href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" data-goal="whatsapp">{% icon "whatsapp" "icon" 20 %}<span>WhatsApp</span></a>
+  <a href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener" data-goal="telegram">{% icon "telegram" "icon" 20 %}<span>Telegram</span></a>
+  <button type="button" data-open-lead data-source="callback">{% icon "file" "icon" 20 %}<span>{% translate "Заявка" %}</span></button>
+</nav>

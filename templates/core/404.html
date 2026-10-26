@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<section class="section">
+  <div class="container container-narrow center">
+    <p class="eyebrow">404</p>
+    <h1>{% translate "Страница не найдена" %}</h1>
+    <p class="page-lead">{% translate "Возможно, ссылка устарела. Посмотрите наши услуги или вернитесь на главную." %}</p>
+    <div class="success-actions">
+      <a class="btn btn-primary" href="{% url 'home' %}">{% translate "На главную" %}</a>
+      <a class="btn btn-outline" href="{% url 'contacts' %}">{% translate "Контакты" %}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load i18n site_tags %}
+<header class="site-header" data-header>
+  <div class="container header-row">
+    <a class="logo" href="{% url 'home' %}" aria-label="{{ BRAND.name }}">
+      <span class="logo-mark">{% icon "shield" "icon" 22 %}</span>
+      <span class="logo-text">{{ BRAND.name }}</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="{% translate 'Основное меню' %}" data-nav>
+      <div class="nav-item has-dropdown">
+        <button class="nav-link" type="button" aria-expanded="false" data-dropdown>
+          {% translate "Услуги" %} {% icon "chevron" "icon icon-xs" 16 %}
+        </button>
+        <div class="dropdown">
+          {% for s in NAV_SERVICES %}
+            <a class="dropdown-link" href="{{ s.get_absolute_url }}">
+              <span class="dropdown-icon">{% icon s.icon "icon" 20 %}</span>{{ s.title }}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      <a class="nav-link" href="{% url 'case_list' %}">{% translate "Кейсы" %}</a>
+      <a class="nav-link" href="{% url 'about' %}">{% translate "О компании" %}</a>
+      <a class="nav-link" href="{% url 'contacts' %}">{% translate "Контакты" %}</a>
+      <div class="nav-mobile-extra">
+        <a class="btn btn-primary btn-block" href="{{ PHONE_HREF }}" data-goal="phone">{% icon "phone" "icon" 18 %} {{ BRAND.phone }}</a>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" aria-label="{% translate 'Язык' %}">
+        {% for l in LANGUAGES_NAV %}
+          <a href="{{ l.url }}" hreflang="{{ l.code }}" lang="{{ l.code }}" class="{% if l.active %}is-active{% endif %}">{% if l.code == "kk" %}KZ{% else %}{{ l.code|upper }}{% endif %}</a>
+        {% endfor %}
+      </div>
+      <a class="header-phone" href="{{ PHONE_HREF }}" data-goal="phone">
+        <strong>{{ BRAND.phone }}</strong>
+        <small>{{ BRAND.hours }}</small>
+      </a>
+      {% if FEATURES.accounts %}<a class="icon-btn" href="#" aria-label="{% translate 'Войти' %}">{% icon "home" %}</a>{% endif %}
+      <button class="btn btn-primary btn-sm header-cta" type="button" data-open-lead data-source="callback">{% translate "Заказать звонок" %}</button>
+      <button class="icon-btn burger" type="button" aria-label="{% translate 'Меню' %}" aria-controls="main-nav" aria-expanded="false" data-burger>
+        {% icon "menu" "icon icon-open" %}{% icon "close" "icon icon-close" %}
+      </button>
+    </div>
+  </div>
+</header>

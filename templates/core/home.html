@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow eyebrow-light">{% icon "pin" "icon" 16 %} {% translate "Алматы и пригороды" %}</span>
+      <h1>{% translate "Охранные системы AJAX, видеонаблюдение и СКУД под ключ" %}</h1>
+      <p class="hero-lead">{% translate "Подберём оборудование, смонтируем без пыли и настроим управление со смартфона. Для квартир, домов, офисов и магазинов." %}</p>
+      <ul class="check-list check-list-light">
+        <li>{% icon "check" "icon" 20 %}{% translate "Выезд инженера и смета — бесплатно" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Монтаж квартиры — обычно за 1 день" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Работаем по договору, гарантия на монтаж" %}</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#hero-form">{% translate "Рассчитать стоимость" %} {% icon "arrow" "icon" 18 %}</a>
+        <a class="btn btn-ghost-light btn-lg" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" data-goal="whatsapp">{% icon "whatsapp" "icon" 20 %} WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="status-chip" aria-hidden="true">
+        <span class="status-dot"></span>
+        <span><strong>{% translate "Под охраной" %}</strong><small>{% translate "9 устройств онлайн" %}</small></span>
+      </div>
+      <div class="form-card" id="hero-form" data-lead-box>
+        <h2 class="form-card-title">{% translate "Бесплатный расчёт" %}</h2>
+        <p class="form-card-sub">{% translate "Перезвоним за 15 минут и назовём цену под ваш объект" %}</p>
+        {% include "partials/lead_form.html" with source="form" form_id="hero" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="container trust-grid">
+    <div class="trust-item">{% icon "ruler" %}<span><strong>0 ₸</strong>{% translate "выезд и смета" %}</span></div>
+    <div class="trust-item">{% icon "clock" %}<span><strong>{% translate "от 1 дня" %}</strong>{% translate "срок монтажа" %}</span></div>
+    <div class="trust-item">{% icon "shield" %}<span><strong>{% translate "Гарантия" %}</strong>{% translate "на работы и оборудование" %}</span></div>
+    <div class="trust-item">{% icon "file" %}<span><strong>{% translate "Договор" %}</strong>{% translate "и фиксированная цена" %}</span></div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{% translate "Услуги" %}</span>
+      <h2>{% translate "Что мы устанавливаем" %}</h2>
+      <p>{% translate "Одна команда для всей безопасности объекта: от датчиков и камер до кабельной сети." %}</p>
+    </div>
+    <div class="service-grid">
+      {% for s in services %}
+        <a class="service-card" href="{{ s.get_absolute_url }}">
+          <span class="service-icon">{% icon s.icon "icon" 28 %}</span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.summary }}</p>
+          <span class="service-foot">
+            {% if s.price_from %}<span class="price-from">{% blocktranslate with price=s.price_from|money %}от <strong>{{ price }} ₸</strong>{% endblocktranslate %}</span>{% endif %}
+            <span class="link-arrow">{% translate "Подробнее" %} {% icon "arrow" "icon" 18 %}</span>
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{% translate "Объекты" %}</span>
+      <h2>{% translate "Решения для любого объекта" %}</h2>
+    </div>
+    <div class="object-grid">
+      <div class="object-tile">{% icon "building" "icon" 30 %}<h3>{% translate "Квартира" %}</h3><p>{% translate "Беспроводная сигнализация, датчики протечки и дыма, видеоглазок" %}</p></div>
+      <div class="object-tile">{% icon "home" "icon" 30 %}<h3>{% translate "Частный дом" %}</h3><p>{% translate "Периметр участка, уличные камеры, управление воротами" %}</p></div>
+      <div class="object-tile">{% icon "file" "icon" 30 %}<h3>{% translate "Офис" %}</h3><p>{% translate "СКУД с учётом времени, камеры, локальная сеть и Wi-Fi" %}</p></div>
+      <div class="object-tile">{% icon "store" "icon" 30 %}<h3>{% translate "Магазин и кафе" %}</h3><p>{% translate "Видеонаблюдение за кассой, тревожная кнопка, доступ с телефона" %}</p></div>
+      <div class="object-tile">{% icon "warehouse" "icon" 30 %}<h3>{% translate "Склад и производство" %}</h3><p>{% translate "Уличные камеры, охрана периметра, вывод на пульт охраны" %}</p></div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/steps.html" %}
+
+{% if cases %}
+<section class="section section-soft" id="cases">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <span class="eyebrow">{% translate "Кейсы" %}</span>
+        <h2>{% translate "Недавние объекты" %}</h2>
+      </div>
+      <a class="link-arrow" href="{% url 'case_list' %}">{% translate "Все кейсы" %} {% icon "arrow" "icon" 18 %}</a>
+    </div>
+    <div class="case-grid">
+      {% for case in cases %}{% include "partials/case_card.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="container why-grid">
+    <div class="section-head">
+      <span class="eyebrow">{% translate "Почему мы" %}</span>
+      <h2>{% translate "Делаем так, чтобы система работала годами" %}</h2>
+      <p>{% translate "Охранная система полезна, только если ей доверяют. Поэтому мы не экономим на монтаже и не исчезаем после оплаты." %}</p>
+    </div>
+    <div class="why-list">
+      <div class="why-item">{% icon "spark" %}<div><h3>{% translate "Подбор под задачу" %}</h3><p>{% translate "Не продаём лишнее: ставим ровно то, что нужно вашему объекту." %}</p></div></div>
+      <div class="why-item">{% icon "wrench" %}<div><h3>{% translate "Аккуратный монтаж" %}</h3><p>{% translate "Прячем кабели, убираем за собой, согласуем точки установки заранее." %}</p></div></div>
+      <div class="why-item">{% icon "smartphone" %}<div><h3>{% translate "Всё в смартфоне" %}</h3><p>{% translate "Тревоги, камеры и доступы — в приложении. Научим пользоваться за 10 минут." %}</p></div></div>
+      <div class="why-item">{% icon "shield" %}<div><h3>{% translate "Сервис после установки" %}</h3><p>{% translate "Обслуживание, расширение системы и помощь, если что-то пошло не так." %}</p></div></div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/faq.html" %}
+{% include "partials/cta.html" %}
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block content %}
+
+<section class="hero hero-service">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <nav class="breadcrumbs breadcrumbs-light" aria-label="{% translate 'Навигация' %}">
+        <a href="{% url 'home' %}">{% translate "Главная" %}</a><span>/</span><span>{{ service.title }}</span>
+      </nav>
+      <span class="hero-icon">{% icon service.icon "icon" 30 %}</span>
+      <h1>{{ service.h1 }}</h1>
+      {% if service.offer %}<p class="hero-lead">{{ service.offer }}</p>{% endif %}
+      {% if service.benefit_list %}
+        <ul class="check-list check-list-light">
+          {% for b in service.benefit_list|slice:":4" %}<li>{% icon "check" "icon" 20 %}{{ b }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+      <div class="hero-actions">
+        {% if service.price_from %}
+          <div class="hero-price"><small>{% translate "Под ключ" %}</small><strong>{% blocktranslate with price=service.price_from|money %}от {{ price }} ₸{% endblocktranslate %}</strong></div>
+        {% endif %}
+        <a class="btn btn-primary btn-lg" href="#hero-form">{% translate "Рассчитать для моего объекта" %}</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="form-card" id="hero-form" data-lead-box>
+        <h2 class="form-card-title">{% translate "Бесплатный расчёт" %}</h2>
+        <p class="form-card-sub">{{ service.title }} — {% translate "перезвоним за 15 минут" %}</p>
+        {% include "partials/lead_form.html" with source="form" form_id="hero" service=service %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container intro-grid">
+    <div class="prose">
+      <h2>{% translate "Что входит в работу" %}</h2>
+      {{ service.intro|linebreaks }}
+    </div>
+    {% if service.object_list %}
+      <aside class="intro-aside">
+        <h3>{% translate "Для каких объектов" %}</h3>
+        <ul class="chip-list">
+          {% for o in service.object_list %}<li class="chip">{{ o }}</li>{% endfor %}
+        </ul>
+        {% if service.benefit_list|length > 4 %}
+          <h3>{% translate "Также" %}</h3>
+          <ul class="check-list">
+            {% for b in service.benefit_list|slice:"4:" %}<li>{% icon "check" "icon" 20 %}{{ b }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+      </aside>
+    {% endif %}
+  </div>
+</section>
+
+{% if packages %}
+<section class="section section-soft" id="packages">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{% translate "Пакеты и цены" %}</span>
+      <h2>{% translate "Готовые решения под ключ" %}</h2>
+      <p>{% translate "Оборудование, монтаж и настройка. Точную цену назовём после бесплатного выезда." %}</p>
+    </div>
+    <div class="package-grid">
+      {% for p in packages %}
+        <article class="package{% if p.is_popular %} package-popular{% endif %}">
+          {% if p.is_popular %}<span class="badge badge-accent">{% translate "Популярный" %}</span>{% endif %}
+          <h3>{{ p.name }}</h3>
+          <div class="package-price">
+            {% if p.price_from %}{% blocktranslate with price=p.price_from|money %}<span>от</span> <strong>{{ price }} ₸</strong>{% endblocktranslate %}{% endif %}
+            {% if p.price_note %}<small>{{ p.price_note }}</small>{% endif %}
+          </div>
+          <ul class="check-list">
+            {% for item in p.item_list %}<li>{% icon "check" "icon" 18 %}{{ item }}</li>{% endfor %}
+          </ul>
+          <button class="btn {% if p.is_popular %}btn-primary{% else %}btn-outline{% endif %} btn-block" type="button"
+                  data-open-lead data-source="form" data-service="{{ service.slug }}" data-note="{{ p.name }}">{% translate "Заказать расчёт" %}</button>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/steps.html" %}
+
+{% if cases %}
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <span class="eyebrow">{% translate "Кейсы" %}</span>
+        <h2>{% translate "Примеры работ" %}</h2>
+      </div>
+      <a class="link-arrow" href="{% url 'case_list' %}">{% translate "Все кейсы" %} {% icon "arrow" "icon" 18 %}</a>
+    </div>
+    <div class="case-grid">
+      {% for case in cases %}{% include "partials/case_card.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/faq.html" %}
+
+{% if other_services %}
+<section class="section section-tight">
+  <div class="container">
+    <h2 class="h3">{% translate "Другие услуги" %}</h2>
+    <div class="mini-services">
+      {% for s in other_services %}
+        <a class="mini-service" href="{{ s.get_absolute_url }}">{% icon s.icon "icon" 22 %}<span>{{ s.title }}</span>{% icon "arrow" "icon icon-end" 18 %}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/cta.html" %}
+{% endblock %}

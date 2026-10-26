@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n site_tags %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="{% translate 'Навигация' %}">
+      <a href="{% url 'home' %}">{% translate "Главная" %}</a><span>/</span><span>{% translate "Контакты" %}</span>
+    </nav>
+    <h1>{% translate "Контакты" %}</h1>
+    <p class="page-lead">{% translate "Работаем по всему Алматы и пригородам: Талгар, Каскелен, Отеген батыр, Боралдай." %}</p>
+  </div>
+</section>
+<section class="section section-top-0">
+  <div class="container contact-grid">
+    <a class="contact-card" href="{{ PHONE_HREF }}" data-goal="phone">{% icon "phone" "icon" 28 %}<span><small>{% translate "Телефон" %}</small><strong>{{ BRAND.phone }}</strong></span></a>
+    <a class="contact-card" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" data-goal="whatsapp">{% icon "whatsapp" "icon" 28 %}<span><small>WhatsApp</small><strong>{% translate "Написать" %}</strong></span></a>
+    <a class="contact-card" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener" data-goal="telegram">{% icon "telegram" "icon" 28 %}<span><small>Telegram</small><strong>@{{ BRAND.telegram }}</strong></span></a>
+    <a class="contact-card" href="mailto:{{ BRAND.email }}">{% icon "mail" "icon" 28 %}<span><small>E-mail</small><strong>{{ BRAND.email }}</strong></span></a>
+    <div class="contact-card">{% icon "pin" "icon" 28 %}<span><small>{% translate "Адрес" %}</small><strong>{{ BRAND.address }}</strong></span></div>
+    <div class="contact-card">{% icon "clock" "icon" 28 %}<span><small>{% translate "Время работы" %}</small><strong>{{ BRAND.hours }}</strong></span></div>
+  </div>
+</section>
+{% include "partials/cta.html" %}
+{% endblock %}
