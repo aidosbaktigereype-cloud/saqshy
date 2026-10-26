@@ -77,6 +77,7 @@ class Lead(models.Model):
     consent = models.BooleanField("Согласие на обработку ПДн", default=False)
 
     telegram_message_id = models.BigIntegerField(null=True, blank=True, editable=False)
+    reminder_sent_at = models.DateTimeField(null=True, blank=True, editable=False)
     created_at = models.DateTimeField("Создана", auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField("Обновлена", auto_now=True)
 
@@ -155,6 +156,37 @@ class LeadEvent(models.Model):
 
     def __str__(self) -> str:
         return f"{self.get_kind_display()}: {self.text[:60]}"
+
+
+class Message(models.Model):
+    """Переписка с клиентом в мессенджере (сейчас — WhatsApp Cloud API)."""
+
+    class Channel(models.TextChoices):
+        WHATSAPP = "whatsapp", "WhatsApp"
+
+    class Direction(models.TextChoices):
+        IN = "in", "Входящее"
+        OUT = "out", "Исходящее"
+
+    lead = models.ForeignKey(Lead, on_delete=models.CASCADE, related_name="messages", verbose_name="Заявка")
+    channel = models.CharField("Канал", max_length=20, choices=Channel.choices, default=Channel.WHATSAPP)
+    direction = models.CharField("Направление", max_length=3, choices=Direction.choices)
+    text = models.TextField("Текст", blank=True)
+    external_id = models.CharField("ID в мессенджере", max_length=128, blank=True, db_index=True)
+    telegram_message_id = models.BigIntegerField(null=True, blank=True, editable=False, db_index=True)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Сотрудник"
+    )
+    created_at = models.DateTimeField("Когда", auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_at"]
+        verbose_name = "сообщение"
+        verbose_name_plural = "переписка"
+
+    def __str__(self) -> str:
+        arrow = "←" if self.direction == self.Direction.IN else "→"
+        return f"{arrow} {self.text[:60]}"
 
 
 def new_link_code() -> str:

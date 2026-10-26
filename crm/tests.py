@@ -120,6 +120,7 @@ class TelegramTests(TestCase):
         self.assertIn("Заявка #", text)
 
 
+@override_settings(ADMIN_2FA_REQUIRED=False)
 class AdminTests(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -134,7 +135,8 @@ class AdminTests(TestCase):
         for url in [
             "/crm/", "/crm/crm/lead/", f"/crm/crm/lead/{lead.pk}/change/", "/crm/crm/lead/add/",
             "/crm/services/service/", "/crm/services/service/1/change/", "/crm/cases/case/", "/crm/core/page/",
-            "/crm/auth/user/", f"/crm/auth/user/{self.admin.pk}/change/",
+            "/crm/auth/user/", f"/crm/auth/user/{self.admin.pk}/change/", "/crm/crm/lead/board/",
+            "/crm/crm/message/", "/crm/2fa/setup/",
         ]:
             with self.subTest(url=url):
                 self.assertEqual(self.client.get(url).status_code, 200)
@@ -148,6 +150,8 @@ class AdminTests(TestCase):
                 "new_comment": "Перезвонить вечером",
                 "events-TOTAL_FORMS": "1", "events-INITIAL_FORMS": "1", "events-MIN_NUM_FORMS": "0", "events-MAX_NUM_FORMS": "1000",
                 "events-0-id": lead.events.get().pk, "events-0-lead": lead.pk,
+                "messages-TOTAL_FORMS": "0", "messages-INITIAL_FORMS": "0",
+                "messages-MIN_NUM_FORMS": "0", "messages-MAX_NUM_FORMS": "1000",
             },
         )
         self.assertEqual(response.status_code, 302, response.content[:2000])

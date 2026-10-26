@@ -1,0 +1,70 @@
+{% extends 'admin/base.html' %}
+{% load site_tags %}
+
+{% block title %}Доска заявок | {{ site_title }}{% endblock %}
+
+{% block content %}
+{% include "admin/crm_styles.html" %}
+<div class="crm">
+  <div class="crm-actions">
+    <a class="crm-btn{% if not mine %} is-primary{% endif %}" href="?">Все заявки</a>
+    <a class="crm-btn{% if mine %} is-primary{% endif %}" href="?mine=1">Мои</a>
+    <a class="crm-btn" href="/crm/crm/lead/add/">+ Заявка вручную</a>
+    <span class="crm-muted" style="align-self:center">Перетащите карточку в другую колонку, чтобы сменить этап. Завершённые и отказы — за 30 дней.</span>
+  </div>
+  {% csrf_token %}
+  <div class="kanban" data-board>
+    {% for col in columns %}
+      <section class="kcol" data-status="{{ col.code }}">
+        <h3><span>{{ col.label }}</span><span class="crm-pill">{{ col.leads|length }}</span></h3>
+        {% for l in col.leads %}
+          <article class="kcard" draggable="{{ can_change|yesno:'true,false' }}" data-id="{{ l.pk }}">
+            <a class="kt" href="/crm/crm/lead/{{ l.pk }}/change/">#{{ l.pk }} · {{ l.name|default:"Без имени" }}</a>
+            <div class="km">{{ l.phone }}</div>
+            {% if l.service %}<div class="km">{{ l.service.title }}</div>{% endif %}
+            <div class="kf">
+              <span class="km">{% if l.assignee %}{{ l.assignee.get_full_name|default:l.assignee.username }}{% else %}—{% endif %}</span>
+              {% if l.next_action_at %}<span class="{% if l.next_action_at < now %}overdue{% else %}km{% endif %}">⏰ {{ l.next_action_at|date:"d.m H:i" }}</span>
+              {% else %}<span class="km">{{ l.created_at|date:"d.m" }}</span>{% endif %}
+            </div>
+            {% if l.amount %}<div class="km" style="margin-top:4px">{{ l.amount|money }} ₸</div>{% endif %}
+          </article>
+        {% endfor %}
+      </section>
+    {% endfor %}
+  </div>
+</div>
+<script>
+(function () {
+  var board = document.querySelector("[data-board]");
+  var token = document.querySelector("[name=csrfmiddlewaretoken]").value;
+  var dragged = null;
+  board.addEventListener("dragstart", function (e) {
+    dragged = e.target.closest(".kcard");
+    if (dragged) { dragged.classList.add("is-dragging"); e.dataTransfer.effectAllowed = "move"; }
+  });
+  board.addEventListener("dragend", function () { if (dragged) dragged.classList.remove("is-dragging"); });
+  board.querySelectorAll(".kcol").forEach(function (col) {
+    col.addEventListener("dragover", function (e) { e.preventDefault(); col.classList.add("is-over"); });
+    col.addEventListener("dragleave", function () { col.classList.remove("is-over"); });
+    col.addEventListener("drop", function (e) {
+      e.preventDefault();
+      col.classList.remove("is-over");
+      if (!dragged || dragged.parentElement === col) return;
+      var card = dragged, from = card.parentElement;
+      col.insertBefore(card, col.querySelector(".kcard"));
+      var body = new URLSearchParams({ status: col.getAttribute("data-status") });
+      fetch("/crm/crm/lead/" + card.getAttribute("data-id") + "/move/", {
+        method: "POST", headers: { "X-CSRFToken": token, "Content-Type": "application/x-www-form-urlencoded" }, body: body
+      }).then(function (r) { if (!r.ok) throw new Error(); refreshCounts(); })
+        .catch(function () { from.appendChild(card); alert("Не удалось сменить этап"); });
+    });
+  });
+  function refreshCounts() {
+    board.querySelectorAll(".kcol").forEach(function (col) {
+      col.querySelector(".crm-pill").textContent = col.querySelectorAll(".kcard").length;
+    });
+  }
+})();
+</script>
+{% endblock %}

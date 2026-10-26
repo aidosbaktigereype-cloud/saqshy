@@ -87,6 +87,8 @@ def lead_text(lead) -> str:
         lines.append(f"🙋 Ответственный: {e(lead.assignee.get_full_name() or lead.assignee.username)}")
     if lead.amount:
         lines.append(f"💰 {lead.amount:,} ₸".replace(",", " "))
+    if lead.pk and lead.source == "messenger" and lead.messages.exists():
+        lines.append("↩️ <i>Ответьте на это сообщение — ответ уйдёт клиенту в WhatsApp</i>")
     return "\n".join(lines)
 
 
@@ -143,6 +145,49 @@ def refresh_lead_message(lead_id: int) -> None:
     )
 
 
+def notify_message(message_id: int) -> None:
+    """Новое сообщение WhatsApp по уже открытой заявке — в рабочую группу."""
+    from crm.models import Message
+
+    if not (enabled() and settings.TELEGRAM_CHAT_ID):
+        return
+    message = Message.objects.select_related("lead").get(pk=message_id)
+    lead = message.lead
+    e = html.escape
+    text = (
+        f"💬 <b>WhatsApp · заявка #{lead.pk}</b>\n"
+        f"👤 {e(lead.name or 'Без имени')} · <code>{e(lead.phone)}</code>\n\n"
+        f"{e(message.text[:3000])}\n\n"
+        "↩️ <i>Ответьте на это сообщение — ответ уйдёт клиенту в WhatsApp</i>"
+    )
+    result = call("sendMessage", chat_id=settings.TELEGRAM_CHAT_ID, text=text, parse_mode="HTML")
+    if result:
+        Message.objects.filter(pk=message.pk).update(telegram_message_id=result["message_id"])
+
+
+def notify_message_async(message_id: int) -> None:
+    if enabled():
+        run_async(notify_message, message_id)
+
+
+def send_reminder(lead) -> bool:
+    """Напоминание о «следующем шаге»: в личку ответственному, иначе в рабочую группу."""
+    profile = getattr(lead.assignee, "staff_profile", None) if lead.assignee else None
+    chat_id = profile.telegram_id if profile and profile.telegram_id else settings.TELEGRAM_CHAT_ID
+    if not (enabled() and chat_id):
+        return False
+    when = timezone.localtime(lead.next_action_at).strftime("%d.%m %H:%M")
+    result = call(
+        "sendMessage",
+        chat_id=chat_id,
+        text=f"⏰ <b>Напоминание · {when}</b>\n\n" + lead_text(lead),
+        parse_mode="HTML",
+        reply_markup=lead_keyboard(lead),
+        disable_web_page_preview=True,
+    )
+    return result is not None
+
+
 def notify_new_lead_async(lead_id: int) -> None:
     if enabled():
         run_async(notify_new_lead, lead_id)
@@ -184,6 +229,9 @@ def handle_message(message: dict) -> None:
     text = (message.get("text") or "").strip()
     chat_id = message["chat"]["id"]
     tg_user = message.get("from") or {}
+    if message.get("reply_to_message") and text and not text.startswith("/"):
+        handle_reply(message)
+        return
     if not text.startswith("/"):
         return
     command, _, arg = text.partition(" ")
@@ -234,6 +282,42 @@ def handle_message(message: dict) -> None:
         for lead in leads
     ]
     reply(chat_id, f"<b>{title}</b>\n" + "\n".join(rows))
+
+
+def lead_for_reply(reply_to_id: int | None):
+    """Находит заявку по сообщению бота, на которое ответил сотрудник."""
+    from crm.models import Lead, Message
+
+    if not reply_to_id:
+        return None
+    message = Message.objects.select_related("lead").filter(telegram_message_id=reply_to_id).first()
+    if message:
+        return message.lead
+    return Lead.objects.filter(telegram_message_id=reply_to_id).first()
+
+
+def handle_reply(message: dict) -> None:
+    """Сотрудник ответил на карточку заявки в группе — отправляем текст клиенту в WhatsApp."""
+    from crm import whatsapp
+
+    chat_id = message["chat"]["id"]
+    reply_to = message["reply_to_message"]
+    if not (reply_to.get("from") or {}).get("is_bot"):
+        return  # обычная переписка сотрудников между собой
+    lead = lead_for_reply(reply_to.get("message_id"))
+    if not lead:
+        return
+    user = staff_by_telegram(message.get("from") or {})
+    if not user:
+        reply(chat_id, "Нет доступа. Привяжите аккаунт командой /link КОД.")
+        return
+    ok, info = whatsapp.reply(lead, message["text"], author=user)
+    call(
+        "sendMessage",
+        chat_id=chat_id,
+        text=("✅ " if ok else "⚠️ ") + f"{info} · заявка #{lead.pk}",
+        reply_to_message_id=message["message_id"],
+    )
 
 
 def handle_callback(query: dict) -> None:
