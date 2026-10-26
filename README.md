@@ -72,6 +72,54 @@ macOS / Linux — то же самое, только `source .venv/bin/activate`
 Новая заявка приходит в группу карточкой с кнопками «✋ Беру», этапы, WhatsApp. Команды: `/new` — новые без
 ответственного, `/today` — мои открытые. Бот отвечает только привязанным сотрудникам.
 
+### Напоминания
+
+У заявки есть поле «Следующий шаг». Когда время наступает, бот пишет ответственному в личку
+(или в рабочую группу, если Telegram не привязан). Локально напоминания отправляет `telegram_poll`,
+на сервере — cron раз в минуту:
+`* * * * * cd /opt/saqshy && docker compose exec -T web python manage.py send_reminders`
+
+## CRM
+
+- **Сводка** (`/crm/`) — заявки за день/неделю/месяц, источники, воронка, конверсия, выручка, просроченные шаги.
+- **Доска** (`/crm/crm/lead/board/`) — канбан по этапам, карточки перетаскиваются мышью; фильтр «Мои».
+- **Заявки** — список с фильтрами, карточка с историей, комментариями и перепиской WhatsApp.
+- **2FA.** Суперпользователь при первом входе настраивает код из приложения (Google Authenticator,
+  Яндекс Ключ). Потеряли телефон — `python manage.py reset_2fa ЛОГИН`. Отключить требование — `ADMIN_2FA_REQUIRED=0`.
+
+## WhatsApp Cloud API
+
+Входящие сообщения клиентов в WhatsApp становятся заявками (или добавляются в переписку открытой заявки),
+приходят в Telegram-группу, а менеджер отвечает **реплаем на сообщение бота** — ответ уходит клиенту в WhatsApp.
+Ответить можно и из карточки заявки в CRM. По правилам WhatsApp свободный ответ возможен в течение 24 часов
+после последнего сообщения клиента.
+
+Настройка (делается в кабинете Meta владельцем бизнеса):
+1. [developers.facebook.com](https://developers.facebook.com/) → Create App → тип **Business** → добавить продукт **WhatsApp**.
+2. WhatsApp → API Setup: скопируйте **Phone number ID** → `WHATSAPP_PHONE_NUMBER_ID` и временный **Access token** →
+   `WHATSAPP_TOKEN` (живёт 24 часа; для постоянной работы создайте System User в Business Settings и выпустите
+   постоянный токен с правами `whatsapp_business_messaging`).
+3. В «To» добавьте свой номер — тестовый номер Meta может писать только в подтверждённые номера (до 5).
+4. App Settings → Basic → **App Secret** → `WHATSAPP_APP_SECRET`. Придумайте `WHATSAPP_VERIFY_TOKEN`.
+5. WhatsApp → Configuration → Webhook: URL `https://<ваш-домен>/wa/webhook/`, Verify token — из шага 4,
+   подпишитесь на поле **messages**.
+6. Для боевого номера компании пройдите верификацию бизнеса и добавьте номер в WhatsApp Manager.
+
+## Публичный адрес для тестов (Cloudflare Tunnel)
+
+Нужен, чтобы открыть сайт с телефона по HTTPS и подключить вебхук WhatsApp без сервера.
+
+```powershell
+winget install --id Cloudflare.cloudflared
+.\.venv\Scripts\python.exe manage.py runserver 0.0.0.0:8000
+cloudflared tunnel --url http://localhost:8000
+```
+
+`cloudflared` выдаст адрес `https://….trycloudflare.com` с сертификатом. Он меняется при каждом запуске —
+обновите `SITE_URL` в `.env` и URL вебхука в кабинете Meta. В `.env` разрешите эти адреса:
+`DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,.trycloudflare.com` и `DJANGO_CSRF_TRUSTED_ORIGINS=https://*.trycloudflare.com`.
+Это только для тестов: реальных клиентов принимайте на сервере в Казахстане.
+
 ## Деплой на VPS (PS Cloud, Hoster.kz и т.п.)
 
 Персональные данные клиентов из Казахстана нужно хранить на серверах в РК, поэтому берите VPS в Казахстане.
@@ -107,7 +155,6 @@ macOS / Linux — то же самое, только `source .venv/bin/activate`
 - [ ] Подключить GA4, Яндекс Метрику, Google Ads (`.env`), настроить цели `lead`, `phone_click`, `whatsapp_click`, `telegram_click`.
 - [ ] Добавить сайт в Google Search Console и Яндекс Вебмастер, отправить `/sitemap.xml`.
 - [ ] Карточки компании в 2ГИС, Google Business Profile и Яндекс Бизнесе.
-- [ ] Двухфакторная аутентификация для админов (запланировано, ещё не сделано).
 
 ## Дальнейшее развитие (заложено в архитектуре)
 

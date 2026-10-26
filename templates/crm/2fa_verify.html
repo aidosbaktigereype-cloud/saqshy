@@ -1,0 +1,17 @@
+{% extends "unfold/layouts/unauthenticated.html" %}
+{% load unfold %}
+{% block content %}
+  {% include "unfold/helpers/unauthenticated_title.html" with title="Код из приложения" subtitle=site_title %}
+  <p class="mb-6 text-sm">Откройте приложение-аутентификатор и введите 6-значный код для аккаунта <strong>{{ user.get_username }}</strong>.</p>
+  {% if error %}<div class="mb-4 rounded-default bg-red-100 px-3 py-2 text-sm text-red-700">{{ error }}</div>{% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <input class="border border-base-200 rounded-default w-full px-3 py-2 text-2xl text-center dark:bg-base-900 dark:border-base-700" style="letter-spacing: .4em"
+           name="token" inputmode="numeric" autocomplete="one-time-code" maxlength="8" autofocus required>
+    <div class="flex flex-col gap-3 mt-6">
+      {% component "unfold/components/button.html" with submit=1 variant="primary" class="w-full" %}Войти{% endcomponent %}
+      {% component "unfold/components/button.html" with href="/crm/logout/" variant="secondary" class="w-full" %}Выйти{% endcomponent %}
+    </div>
+  </form>
+{% endblock %}

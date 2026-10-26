@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
+    "django_otp",
+    "django_otp.plugins.otp_totp",
     "core",
     "services",
     "cases",
@@ -57,6 +59,9 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django_otp.middleware.OTPMiddleware",
+    "crm.middleware.AdminRussianMiddleware",
+    "crm.middleware.AdminTwoFactorMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
@@ -131,8 +136,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CACHES = {"default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache"}}
 
 # --- Безопасность в продакшене ------------------------------------------
+# За прокси (Caddy, Cloudflare Tunnel) Django узнаёт о HTTPS по этому заголовку.
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 if not DEBUG:
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SECURE_SSL_REDIRECT = env_bool("DJANGO_SSL_REDIRECT", True)
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
@@ -185,6 +191,16 @@ TELEGRAM_BOT_TOKEN = env("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = env("TELEGRAM_CHAT_ID")
 TELEGRAM_WEBHOOK_SECRET = env("TELEGRAM_WEBHOOK_SECRET")
 
+# --- WhatsApp Cloud API (Meta) --------------------------------------------
+WHATSAPP_TOKEN = env("WHATSAPP_TOKEN")
+WHATSAPP_PHONE_NUMBER_ID = env("WHATSAPP_PHONE_NUMBER_ID")
+WHATSAPP_VERIFY_TOKEN = env("WHATSAPP_VERIFY_TOKEN")
+WHATSAPP_APP_SECRET = env("WHATSAPP_APP_SECRET")
+WHATSAPP_API_VERSION = env("WHATSAPP_API_VERSION", "v23.0")
+
+# 2FA (TOTP) обязательна для суперпользователей при входе в CRM.
+ADMIN_2FA_REQUIRED = env_bool("ADMIN_2FA_REQUIRED", True)
+
 # Антиспам для формы заявки: не больше N заявок с одного IP за окно (секунды).
 LEAD_RATE_LIMIT = int(env("LEAD_RATE_LIMIT", "5"))
 LEAD_RATE_WINDOW = int(env("LEAD_RATE_WINDOW", "600"))
@@ -197,6 +213,8 @@ UNFOLD = {
     "SITE_URL": "/",
     "SITE_SYMBOL": "shield",
     "SHOW_VIEW_ON_SITE": True,
+    "DASHBOARD_CALLBACK": "crm.dashboard.dashboard_callback",
+    "ACCOUNT": {"navigation": [{"title": _("Двухфакторная защита"), "link": "/crm/2fa/setup/"}]},
     "COLORS": {
         "primary": {
             "50": "oklch(97% .02 75)",
@@ -219,8 +237,11 @@ UNFOLD = {
             {
                 "title": _("CRM"),
                 "items": [
+                    {"title": _("Сводка"), "icon": "monitoring", "link": "/crm/"},
+                    {"title": _("Доска"), "icon": "view_kanban", "link": "/crm/crm/lead/board/"},
                     {"title": _("Заявки"), "icon": "inbox", "link": "/crm/crm/lead/"},
                     {"title": _("Новые заявки"), "icon": "notifications", "link": "/crm/crm/lead/?status__exact=new"},
+                    {"title": _("Переписка"), "icon": "chat", "link": "/crm/crm/message/"},
                     {"title": _("История"), "icon": "history", "link": "/crm/crm/leadevent/"},
                 ],
             },

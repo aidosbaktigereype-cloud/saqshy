@@ -3,7 +3,7 @@ import time
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 
-from crm import telegram
+from crm import reminders, telegram
 
 
 class Command(BaseCommand):
@@ -18,6 +18,7 @@ class Command(BaseCommand):
         offset = None
         while True:
             try:
+                reminders.send_due()
                 updates = telegram.call("getUpdates", timeout=25, offset=offset) or []
                 for update in updates:
                     offset = update["update_id"] + 1

@@ -1,0 +1,28 @@
+{% extends "unfold/layouts/unauthenticated.html" %}
+{% load unfold %}
+{% block content %}
+  {% include "unfold/helpers/unauthenticated_title.html" with title="Двухфакторная защита" subtitle=site_title %}
+  {% if enabled %}
+    <p class="mb-6 text-sm">2FA уже включена для <strong>{{ user.get_username }}</strong>. Если телефон потерян, администратор может сбросить её командой <code>python manage.py reset_2fa {{ user.get_username }}</code>.</p>
+    {% component "unfold/components/button.html" with href="/crm/" variant="primary" class="w-full" %}В CRM{% endcomponent %}
+  {% else %}
+    {% if required %}<p class="mb-4 text-sm">Для администраторов вход в CRM защищён кодом с телефона. Это займёт минуту.</p>{% endif %}
+    <ol class="mb-4 text-sm" style="list-style: decimal; padding-left: 1.25rem; line-height: 1.6">
+      <li>Установите Google Authenticator, Microsoft Authenticator или Яндекс Ключ.</li>
+      <li>Отсканируйте QR-код (или введите ключ вручную).</li>
+      <li>Введите 6-значный код из приложения.</li>
+    </ol>
+    <div class="mb-3 rounded-default bg-white p-2 mx-auto" style="width:220px">{{ qr }}</div>
+    <p class="mb-4 text-xs text-center break-all">Ключ: <code>{{ secret }}</code></p>
+    {% if error %}<div class="mb-4 rounded-default bg-red-100 px-3 py-2 text-sm text-red-700">{{ error }}</div>{% endif %}
+    <form method="post">
+      {% csrf_token %}
+      <input class="border border-base-200 rounded-default w-full px-3 py-2 text-2xl text-center dark:bg-base-900 dark:border-base-700" style="letter-spacing: .4em"
+             name="token" inputmode="numeric" autocomplete="one-time-code" maxlength="8" required>
+      <div class="flex flex-col gap-3 mt-6">
+        {% component "unfold/components/button.html" with submit=1 variant="primary" class="w-full" %}Включить 2FA{% endcomponent %}
+        {% component "unfold/components/button.html" with href="/crm/logout/" variant="secondary" class="w-full" %}Выйти{% endcomponent %}
+      </div>
+    </form>
+  {% endif %}
+{% endblock %}

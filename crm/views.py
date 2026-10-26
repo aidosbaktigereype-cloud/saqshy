@@ -14,7 +14,7 @@ from django.utils import translation
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
-from crm import telegram
+from crm import telegram, whatsapp
 from crm.models import Lead, LeadSource
 from services.models import Service
 
@@ -133,6 +133,30 @@ def send_lead_email(lead: Lead) -> None:
         )
     except Exception:  # почта не должна ломать приём заявки
         logger.exception("Lead email failed")
+
+
+@csrf_exempt
+def whatsapp_webhook(request: HttpRequest):
+    """Вебхук WhatsApp Cloud API.
+
+    GET — проверка при подключении в кабинете Meta (hub.verify_token),
+    POST — входящие сообщения, подписаны X-Hub-Signature-256.
+    """
+    if request.method == "GET":
+        token = settings.WHATSAPP_VERIFY_TOKEN
+        if token and request.GET.get("hub.mode") == "subscribe" and request.GET.get("hub.verify_token") == token:
+            return HttpResponse(request.GET.get("hub.challenge", ""), content_type="text/plain")
+        return HttpResponse(status=403)
+    if request.method != "POST":
+        return HttpResponse(status=405)
+    if not whatsapp.verify_signature(request.body, request.headers.get("X-Hub-Signature-256", "")):
+        return HttpResponse(status=403)
+    try:
+        payload = json.loads(request.body or b"{}")
+        whatsapp.handle_webhook(payload)
+    except Exception:  # Meta повторяет запрос при ошибке — отвечаем 200, ошибку логируем
+        logger.exception("WhatsApp webhook failed")
+    return HttpResponse("ok")
 
 
 @csrf_exempt

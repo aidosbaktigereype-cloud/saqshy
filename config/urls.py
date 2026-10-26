@@ -8,11 +8,15 @@ from django.urls import path
 from cases import views as cases_views
 from core import views as core_views
 from core.sitemaps import SITEMAPS
+from crm import twofa
 from crm import views as crm_views
 from services import views as services_views
 
 urlpatterns = [
+    path("crm/2fa/setup/", twofa.setup, name="twofa_setup"),
+    path("crm/2fa/verify/", twofa.verify, name="twofa_verify"),
     path("crm/", admin.site.urls),
+    path("wa/webhook/", crm_views.whatsapp_webhook, name="whatsapp_webhook"),
     path("api/leads/", crm_views.lead_create, name="lead_create"),
     path("tg/webhook/", crm_views.telegram_webhook, name="telegram_webhook"),
     path("sitemap.xml", sitemap, {"sitemaps": SITEMAPS}, name="django.contrib.sitemaps.views.sitemap"),

@@ -1,5 +1,13 @@
+from datetime import timedelta
+
 from django import forms
 from django.contrib import admin, messages
+from django.core.exceptions import PermissionDenied
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from django.template.response import TemplateResponse
+from django.urls import path
+from django.utils import timezone
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group, User
@@ -8,7 +16,10 @@ from unfold.admin import ModelAdmin, StackedInline, TabularInline
 from unfold.decorators import display
 from unfold.forms import AdminPasswordChangeForm, UserChangeForm, UserCreationForm
 
-from crm.models import Lead, LeadEvent, LeadStatus, StaffProfile
+from crm import whatsapp
+from crm.models import Lead, LeadEvent, LeadStatus, Message, StaffProfile
+
+admin.site.index_title = "Сводка"
 
 STATUS_COLORS = {
     LeadStatus.NEW: "info",
@@ -28,6 +39,12 @@ class LeadForm(forms.ModelForm):
         widget=forms.Textarea(attrs={"rows": 2}),
         help_text="Попадёт в историю заявки",
     )
+    whatsapp_reply = forms.CharField(
+        label="Ответить клиенту в WhatsApp",
+        required=False,
+        widget=forms.Textarea(attrs={"rows": 2}),
+        help_text="Работает в течение 24 часов после последнего сообщения клиента",
+    )
 
     class Meta:
         model = Lead
@@ -46,10 +63,22 @@ class LeadEventInline(TabularInline):
         return False
 
 
+class MessageInline(TabularInline):
+    model = Message
+    extra = 0
+    can_delete = False
+    fields = ("created_at", "direction", "text", "author")
+    readonly_fields = fields
+    verbose_name_plural = "Переписка WhatsApp"
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+
 @admin.register(Lead)
 class LeadAdmin(ModelAdmin):
     form = LeadForm
-    inlines = [LeadEventInline]
+    inlines = [MessageInline, LeadEventInline]
     list_display = ("number", "created_at", "show_status", "name", "phone_link", "service", "source", "assignee", "next_action_at")
     list_display_links = ("number", "name")
     list_filter = ("status", "source", "service", "assignee", "locale", "created_at")
@@ -66,7 +95,7 @@ class LeadAdmin(ModelAdmin):
     )
     fieldsets = (
         ("Клиент", {"fields": ("name", "phone", "service", "object_type", "message", "source")}),
-        ("Работа с заявкой", {"fields": ("status", "assignee", "next_action_at", "amount", "lost_reason", "new_comment")}),
+        ("Работа с заявкой", {"fields": ("status", "assignee", "next_action_at", "amount", "lost_reason", "new_comment", "whatsapp_reply")}),
         (
             "Источник и реклама",
             {
@@ -106,6 +135,60 @@ class LeadAdmin(ModelAdmin):
         comment = form.cleaned_data.get("new_comment", "").strip()
         if comment:
             LeadEvent.objects.create(lead=obj, kind=LeadEvent.Kind.COMMENT, text=comment, author=request.user)
+        answer = form.cleaned_data.get("whatsapp_reply", "").strip()
+        if answer:
+            ok, info = whatsapp.reply(obj, answer, author=request.user)
+            self.message_user(request, info, messages.SUCCESS if ok else messages.ERROR)
+
+    # --- Канбан-доска -------------------------------------------------------
+
+    def get_urls(self):
+        custom = [
+            path("board/", self.admin_site.admin_view(self.board_view), name="crm_lead_board"),
+            path("<int:pk>/move/", self.admin_site.admin_view(self.move_view), name="crm_lead_move"),
+        ]
+        return custom + super().get_urls()
+
+    def board_view(self, request):
+        if not self.has_view_permission(request):
+            raise PermissionDenied
+        now = timezone.now()
+        leads = Lead.objects.select_related("service", "assignee")
+        mine = request.GET.get("mine") == "1"
+        if mine:
+            leads = leads.filter(assignee=request.user)
+        columns = []
+        for code, label in LeadStatus.choices:
+            items = leads.filter(status=code)
+            if code in (LeadStatus.DONE, LeadStatus.LOST):
+                items = items.filter(updated_at__gte=now - timedelta(days=30))
+            items = list(items.order_by("next_action_at", "-created_at")[:100])
+            columns.append({"code": code, "label": label, "leads": items, "color": STATUS_COLORS.get(code)})
+        context = {
+            **self.admin_site.each_context(request),
+            "title": "Доска заявок",
+            "opts": self.model._meta,
+            "columns": columns,
+            "mine": mine,
+            "now": now,
+            "can_change": self.has_change_permission(request),
+        }
+        return TemplateResponse(request, "admin/crm/lead/board.html", context)
+
+    def move_view(self, request, pk):
+        if request.method != "POST":
+            return JsonResponse({"ok": False}, status=405)
+        if not self.has_change_permission(request):
+            raise PermissionDenied
+        status = request.POST.get("status")
+        if status not in LeadStatus.values:
+            return JsonResponse({"ok": False, "error": "bad status"}, status=400)
+        lead = get_object_or_404(Lead, pk=pk)
+        lead.status = status
+        if not lead.assignee_id and status != LeadStatus.NEW:
+            lead.assignee = request.user
+        lead.save(actor=request.user)
+        return JsonResponse({"ok": True})
 
     def _bulk(self, request, queryset, status, assign=False):
         for lead in queryset:
@@ -131,6 +214,20 @@ class LeadAdmin(ModelAdmin):
     @admin.action(description="Отметить: Отказ")
     def mark_lost(self, request, queryset):
         self._bulk(request, queryset, LeadStatus.LOST)
+
+
+@admin.register(Message)
+class MessageAdmin(ModelAdmin):
+    list_display = ("created_at", "lead", "direction", "text", "author")
+    list_filter = ("direction", "channel", "created_at")
+    search_fields = ("text", "lead__phone", "lead__name")
+    list_select_related = ("lead", "author")
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(LeadEvent)
