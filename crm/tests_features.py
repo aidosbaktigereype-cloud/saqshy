@@ -41,10 +41,16 @@ class BoardAndDashboardTests(TestCase):
         self.assertContains(self.client.get("/crm/crm/lead/", HTTP_ACCEPT_LANGUAGE="en"), "Выберите")
 
 
+@override_settings(ADMIN_2FA_REQUIRED=True)
 class TwoFactorTests(TestCase):
     def setUp(self):
         self.admin = get_user_model().objects.create_superuser("boss", "boss@example.kz", "x" * 12)
         self.client.force_login(self.admin)
+
+    def test_disabled_when_setting_is_false(self):
+        with self.settings(ADMIN_2FA_REQUIRED=False):
+            response = self.client.get("/crm/")
+            self.assertEqual(response.status_code, 200)
 
     def test_superuser_without_device_must_set_up(self):
         self.assertRedirects(self.client.get("/crm/"), "/crm/2fa/setup/", fetch_redirect_response=False)

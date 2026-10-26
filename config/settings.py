@@ -199,7 +199,8 @@ WHATSAPP_APP_SECRET = env("WHATSAPP_APP_SECRET")
 WHATSAPP_API_VERSION = env("WHATSAPP_API_VERSION", "v23.0")
 
 # 2FA (TOTP) обязательна для суперпользователей при входе в CRM.
-ADMIN_2FA_REQUIRED = env_bool("ADMIN_2FA_REQUIRED", True)
+# На продакшене (DEBUG=0) включена по умолчанию, при тестировании/разработке (DEBUG=1) выключена.
+ADMIN_2FA_REQUIRED = env_bool("ADMIN_2FA_REQUIRED", not DEBUG)
 
 # Антиспам для формы заявки: не больше N заявок с одного IP за окно (секунды).
 LEAD_RATE_LIMIT = int(env("LEAD_RATE_LIMIT", "5"))

@@ -32,6 +32,9 @@ class AdminTwoFactorMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
+        if not getattr(settings, "ADMIN_2FA_REQUIRED", True):
+            return self.get_response(request)
+
         path = request.path
         user = getattr(request, "user", None)
         if (
