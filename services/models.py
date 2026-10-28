@@ -13,6 +13,8 @@ class Service(models.Model):
         ACCESS = "access", "Доступ / СКУД"
         ALARM = "alarm", "Сирена / сигнализация"
         NETWORK = "network", "Сеть / слаботочка"
+        SHIELD = "shield", "Пультовая охрана / КҮЗЕТ"
+        WRENCH = "wrench", "Техническое обслуживание"
 
     slug = models.SlugField("URL", unique=True, help_text="Латиницей, например: ajax")
     icon = models.CharField("Иконка", max_length=20, choices=Icon.choices, default=Icon.HUB)

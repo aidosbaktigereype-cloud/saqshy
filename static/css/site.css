@@ -263,6 +263,7 @@ a:hover > .link-arrow .icon, .link-arrow:hover .icon { transform: translateX(3px
 
 /* --- Шаги ------------------------------------------------------------------ */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; }
+.steps-5 { grid-template-columns: repeat(5, 1fr); }
 .step { position: relative; padding: 28px 24px; border-radius: var(--radius); background: var(--bg-soft); counter-increment: step; }
 .section-soft .step { background: #fff; }
 .step::before {
@@ -408,10 +409,14 @@ a.contact-card:hover { border-color: var(--line-strong); box-shadow: var(--shado
 .modal-sub { color: var(--muted); }
 
 /* --- Адаптив --------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .steps-5 { grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 1100px) {
   .header-phone { display: none; }
   .object-grid { grid-template-columns: repeat(3, 1fr); }
-  .steps { grid-template-columns: repeat(2, 1fr); }
+  .steps, .steps-5 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 960px) {
@@ -452,7 +457,7 @@ a.contact-card:hover { border-color: var(--line-strong); box-shadow: var(--shado
   .header-actions { gap: 10px; }
   .hero-actions .btn { width: 100%; }
   .form-card, .modal-card { padding: 24px 20px; }
-  .service-grid, .case-grid, .object-grid, .steps, .why-list, .contact-grid { grid-template-columns: 1fr; }
+  .service-grid, .case-grid, .object-grid, .steps, .steps-5, .why-list, .contact-grid { grid-template-columns: 1fr; }
   .trust-item { flex-direction: column; align-items: flex-start; padding: 18px 16px; gap: 8px; }
   .section-head-row { flex-direction: column; align-items: flex-start; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }

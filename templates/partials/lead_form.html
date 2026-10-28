@@ -25,9 +25,9 @@
     <input type="hidden" name="service" value="{{ service.slug }}">
   {% else %}
     <div class="field">
-      <label for="{{ form_id }}-service">{% translate "Что нужно установить" %}</label>
+      <label for="{{ form_id }}-service">{% translate "Интересующая услуга или задача" %}</label>
       <select id="{{ form_id }}-service" name="service">
-        <option value="">{% translate "Пока не знаю — нужна консультация" %}</option>
+        <option value="">{% translate "Комплексная безопасность (монтаж, пульт КҮЗЕТ, ТО)" %}</option>
         {% for s in NAV_SERVICES %}<option value="{{ s.slug }}">{{ s.title }}</option>{% endfor %}
       </select>
     </div>

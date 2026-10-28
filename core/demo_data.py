@@ -30,16 +30,16 @@ SERVICES = [
         ),
         "intro": T(
             "Ajax — беспроводная охранная система: хаб, датчики и сирены связываются по защищённому радиоканалу, поэтому монтаж проходит без прокладки кабелей и ремонта.\n\n"
-            "Мы приезжаем на объект, определяем уязвимые места, подбираем комплект и устанавливаем его. Настраиваем сценарии (например, «Ушёл из дома» одной кнопкой), подключаем приложение для всей семьи и, при желании, вывод тревог на пульт охранной компании.",
+            "Мы приезжаем на объект, определяем уязвимые места, подбираем комплект и устанавливаем его. Настраиваем сценарии (например, «Ушёл из дома» одной кнопкой), подключаем приложение для всей семьи, организуем подключение к пульту централизованного наблюдения (ПЦН) КҮЗЕТ для реагирования мобильной группы по договору и берем систему на регулярное техническое обслуживание.",
             "Ajax — сымсыз күзет жүйесі: хаб, датчиктер мен сиреналар қорғалған радиоарна арқылы байланысады, сондықтан монтаж кабель тартусыз және жөндеусіз өтеді.\n\n"
-            "Біз нысанға келіп, осал жерлерді анықтаймыз, жиынтықты таңдап, орнатамыз. Сценарийлерді баптаймыз (мысалы, бір батырмамен «Үйден шықтым»), бүкіл отбасына қосымшаны қосамыз және қаласаңыз, дабылдарды күзет компаниясының пультіне шығарамыз.",
+            "Біз нысанға келіп, осал жерлерді анықтаймыз, жиынтықты таңдап, орнатамыз. Сценарийлерді баптаймыз (мысалы, бір батырмамен «Үйден шықтым»), бүкіл отбасына қосымшаны қосамыз, шарт бойынша жедел топтың әрекет етуі үшін КҮЗЕТ орталықтандырылған пультіне қосылуды ұйымдастырамыз және жүйені тұрақты техникалық қызметке аламыз.",
             "Ajax is a wireless security system: the hub, sensors and sirens communicate over an encrypted radio channel, so installation needs no cabling or renovation.\n\n"
-            "We visit the site, identify weak points, select a kit and install it. We set up scenarios (for example, “Leaving home” with one tap), connect the app for the whole family and, if needed, route alarms to a security company's monitoring station.",
+            "We visit the site, identify weak points, select a kit and install it. We set up automated scenarios, connect the mobile app, organise connection to the KUZET central monitoring station for mobile group response under contract, and provide ongoing technical maintenance.",
         ),
         "benefits": T(
-            "Монтаж без штробления и пыли\nУправление и тревоги в приложении\nРаботает при отключении света и интернета\nДатчики протечки, дыма и разбития стекла\nВывод на пульт охранной компании по желанию\nРасширение системы в любой момент",
-            "Қабырғаны ойып-бұзусыз және шаңсыз монтаж\nҚосымшада басқару және дабылдар\nЖарық пен интернет өшсе де жұмыс істейді\nСу ағу, түтін және әйнек сыну датчиктері\nҚаласаңыз, күзет компаниясының пультіне шығару\nЖүйені кез келген уақытта кеңейту",
-            "No wall chasing, no dust\nControl and alerts in the app\nKeeps working during power and internet outages\nLeak, smoke and glass-break sensors\nOptional connection to a monitoring station\nExpand the system at any time",
+            "Монтаж без штробления и пыли\nУправление и тревоги в приложении\nРаботает при отключении света и интернета\nПодключение к пультовой охране КҮЗЕТ\nОрганизация выезда мобильной группы по договору\nРегулярное техническое обслуживание",
+            "Қабырғаны ойып-бұзусыз және шаңсыз монтаж\nҚосымшада басқару және дабылдар\nЖарық пен интернет өшсе де жұмыс істейді\nКҮЗЕТ пульттік күзетіне қосылу\nШарт бойынша жедел топтың шығуын ұйымдастыру\nТұрақты техникалық қызмет көрсету",
+            "No wall chasing, no dust\nControl and alerts in the app\nKeeps working during power and internet outages\nConnection to KUZET central monitoring\nMobile response team dispatched under contract\nOngoing preventative maintenance",
         ),
         "object_types": T(
             "Квартира\nЧастный дом\nОфис\nМагазин\nДача",

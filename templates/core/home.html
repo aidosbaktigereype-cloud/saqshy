@@ -6,26 +6,28 @@
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="eyebrow eyebrow-light">{% icon "pin" "icon" 16 %} {% translate "Алматы и пригороды" %}</span>
-      <h1>{% translate "Охранные системы AJAX, видеонаблюдение и СКУД под ключ" %}</h1>
-      <p class="hero-lead">{% translate "Подберём оборудование, смонтируем без пыли и настроим управление со смартфона. Для квартир, домов, офисов и магазинов." %}</p>
+      <h1>{% translate "Комплексная безопасность объекта — от монтажа до пультовой охраны КҮЗЕТ" %}</h1>
+      <p class="hero-lead">{% translate "Устанавливаем системы безопасности, подключаем объекты к ПЦН КҮЗЕТ и обеспечиваем техническое сопровождение. Мониторинг тревожных сигналов и реагирование мобильной группы осуществляются в соответствии с условиями договора охраны." %}</p>
       <ul class="check-list check-list-light">
-        <li>{% icon "check" "icon" 20 %}{% translate "Выезд инженера и смета — бесплатно" %}</li>
-        <li>{% icon "check" "icon" 20 %}{% translate "Монтаж квартиры — обычно за 1 день" %}</li>
-        <li>{% icon "check" "icon" 20 %}{% translate "Работаем по договору, гарантия на монтаж" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Подбор и аккуратный монтаж оборудования за 1 день" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Подключение объекта к ПЦН КҮЗЕТ и мониторинг 24/7" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Организация выезда мобильной группы КҮЗЕТ по договору" %}</li>
+        <li>{% icon "check" "icon" 20 %}{% translate "Регулярное техническое обслуживание и поддержка" %}</li>
       </ul>
       <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="#hero-form">{% translate "Рассчитать стоимость" %} {% icon "arrow" "icon" 18 %}</a>
+        <a class="btn btn-primary btn-lg" href="#hero-form">{% translate "Подключить пультовую охрану" %} {% icon "arrow" "icon" 18 %}</a>
+        <button class="btn btn-ghost-light btn-lg" type="button" data-open-lead data-source="hero">{% translate "Рассчитать стоимость" %}</button>
         <a class="btn btn-ghost-light btn-lg" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener" data-goal="whatsapp">{% icon "whatsapp" "icon" 20 %} WhatsApp</a>
       </div>
     </div>
     <div class="hero-side">
       <div class="status-chip" aria-hidden="true">
         <span class="status-dot"></span>
-        <span><strong>{% translate "Под охраной" %}</strong><small>{% translate "9 устройств онлайн" %}</small></span>
+        <span><strong>{% translate "Объект под охраной" %}</strong><small>{% translate "ПЦН КҮЗЕТ · Мониторинг 24/7" %}</small></span>
       </div>
       <div class="form-card" id="hero-form" data-lead-box>
-        <h2 class="form-card-title">{% translate "Бесплатный расчёт" %}</h2>
-        <p class="form-card-sub">{% translate "Перезвоним за 15 минут и назовём цену под ваш объект" %}</p>
+        <h2 class="form-card-title">{% translate "Заявка на подключение" %}</h2>
+        <p class="form-card-sub">{% translate "Подберём оборудование, рассчитаем смету и предложим подключение к пульту КҮЗЕТ" %}</p>
         {% include "partials/lead_form.html" with source="form" form_id="hero" %}
       </div>
     </div>
@@ -34,10 +36,10 @@
 
 <section class="trust-bar">
   <div class="container trust-grid">
-    <div class="trust-item">{% icon "ruler" %}<span><strong>0 ₸</strong>{% translate "выезд и смета" %}</span></div>
-    <div class="trust-item">{% icon "clock" %}<span><strong>{% translate "от 1 дня" %}</strong>{% translate "срок монтажа" %}</span></div>
-    <div class="trust-item">{% icon "shield" %}<span><strong>{% translate "Гарантия" %}</strong>{% translate "на работы и оборудование" %}</span></div>
-    <div class="trust-item">{% icon "file" %}<span><strong>{% translate "Договор" %}</strong>{% translate "и фиксированная цена" %}</span></div>
+    <div class="trust-item">{% icon "wrench" %}<span><strong>{% translate "Монтаж" %}</strong>{% translate "от 1 дня под ключ" %}</span></div>
+    <div class="trust-item">{% icon "shield" %}<span><strong>{% translate "Пульт КҮЗЕТ" %}</strong>{% translate "подключение к ПЦН" %}</span></div>
+    <div class="trust-item">{% icon "alarm" %}<span><strong>{% translate "Мониторинг" %}</strong>{% translate "24/7 и реагирование" %}</span></div>
+    <div class="trust-item">{% icon "clock" %}<span><strong>{% translate "Сервис" %}</strong>{% translate "регламентное ТО" %}</span></div>
   </div>
 </section>
 
@@ -45,8 +47,8 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">{% translate "Услуги" %}</span>
-      <h2>{% translate "Что мы устанавливаем" %}</h2>
-      <p>{% translate "Одна команда для всей безопасности объекта: от датчиков и камер до кабельной сети." %}</p>
+      <h2>{% translate "Комплексные услуги безопасности" %}</h2>
+      <p>{% translate "Полный цикл защиты объекта: от подбора датчиков и монтажа до подключения к пульту охраны КҮЗЕТ и регламентного ТО." %}</p>
     </div>
     <div class="service-grid">
       {% for s in services %}
@@ -71,11 +73,11 @@
       <h2>{% translate "Решения для любого объекта" %}</h2>
     </div>
     <div class="object-grid">
-      <div class="object-tile">{% icon "building" "icon" 30 %}<h3>{% translate "Квартира" %}</h3><p>{% translate "Беспроводная сигнализация, датчики протечки и дыма, видеоглазок" %}</p></div>
-      <div class="object-tile">{% icon "home" "icon" 30 %}<h3>{% translate "Частный дом" %}</h3><p>{% translate "Периметр участка, уличные камеры, управление воротами" %}</p></div>
-      <div class="object-tile">{% icon "file" "icon" 30 %}<h3>{% translate "Офис" %}</h3><p>{% translate "СКУД с учётом времени, камеры, локальная сеть и Wi-Fi" %}</p></div>
-      <div class="object-tile">{% icon "store" "icon" 30 %}<h3>{% translate "Магазин и кафе" %}</h3><p>{% translate "Видеонаблюдение за кассой, тревожная кнопка, доступ с телефона" %}</p></div>
-      <div class="object-tile">{% icon "warehouse" "icon" 30 %}<h3>{% translate "Склад и производство" %}</h3><p>{% translate "Уличные камеры, охрана периметра, вывод на пульт охраны" %}</p></div>
+      <div class="object-tile">{% icon "building" "icon" 30 %}<h3>{% translate "Квартира" %}</h3><p>{% translate "Беспроводная сигнализация, датчики взлома и протечки, подключение к пульту КҮЗЕТ" %}</p></div>
+      <div class="object-tile">{% icon "home" "icon" 30 %}<h3>{% translate "Частный дом" %}</h3><p>{% translate "Периметр участка, уличные камеры, тревожная кнопка и пультовая охрана КҮЗЕТ" %}</p></div>
+      <div class="object-tile">{% icon "file" "icon" 30 %}<h3>{% translate "Офис" %}</h3><p>{% translate "СКУД с учётом времени, видеонаблюдение, вывод на пульт КҮЗЕТ и договорное ТО" %}</p></div>
+      <div class="object-tile">{% icon "store" "icon" 30 %}<h3>{% translate "Магазин и кафе" %}</h3><p>{% translate "Тревожная кнопка экстренного вызова КҮЗЕТ, видеонаблюдение, ночная охрана" %}</p></div>
+      <div class="object-tile">{% icon "warehouse" "icon" 30 %}<h3>{% translate "Склад и производство" %}</h3><p>{% translate "Охрана периметра, видеоаналитика, круглосуточный мониторинг КҮЗЕТ и ТО" %}</p></div>
     </div>
   </div>
 </section>
@@ -103,14 +105,14 @@
   <div class="container why-grid">
     <div class="section-head">
       <span class="eyebrow">{% translate "Почему мы" %}</span>
-      <h2>{% translate "Делаем так, чтобы система работала годами" %}</h2>
-      <p>{% translate "Охранная система полезна, только если ей доверяют. Поэтому мы не экономим на монтаже и не исчезаем после оплаты." %}</p>
+      <h2>{% translate "Надёжная безопасность на каждом этапе" %}</h2>
+      <p>{% translate "Мы не просто устанавливаем оборудование, а обеспечиваем непрерывную защиту объекта: от монтажа до круглосуточного мониторинга и сервисного сопровождения." %}</p>
     </div>
     <div class="why-list">
-      <div class="why-item">{% icon "spark" %}<div><h3>{% translate "Подбор под задачу" %}</h3><p>{% translate "Не продаём лишнее: ставим ровно то, что нужно вашему объекту." %}</p></div></div>
-      <div class="why-item">{% icon "wrench" %}<div><h3>{% translate "Аккуратный монтаж" %}</h3><p>{% translate "Прячем кабели, убираем за собой, согласуем точки установки заранее." %}</p></div></div>
-      <div class="why-item">{% icon "smartphone" %}<div><h3>{% translate "Всё в смартфоне" %}</h3><p>{% translate "Тревоги, камеры и доступы — в приложении. Научим пользоваться за 10 минут." %}</p></div></div>
-      <div class="why-item">{% icon "shield" %}<div><h3>{% translate "Сервис после установки" %}</h3><p>{% translate "Обслуживание, расширение системы и помощь, если что-то пошло не так." %}</p></div></div>
+      <div class="why-item">{% icon "spark" %}<div><h3>{% translate "Подбор под задачу" %}</h3><p>{% translate "Проектируем оптимальную конфигурацию именно для вашего объекта без лишних переплат." %}</p></div></div>
+      <div class="why-item">{% icon "wrench" %}<div><h3>{% translate "Профессиональный монтаж" %}</h3><p>{% translate "Чистая установка без повреждения отделки, скрытая прокладка кабелей, точная юстировка датчиков." %}</p></div></div>
+      <div class="why-item">{% icon "shield" %}<div><h3>{% translate "Пультовая охрана КҮЗЕТ" %}</h3><p>{% translate "Подключение к пульту централизованного наблюдения и организация выезда мобильной группы по договору." %}</p></div></div>
+      <div class="why-item">{% icon "clock" %}<div><h3>{% translate "Регулярное ТО и сервис" %}</h3><p>{% translate "Плановые проверки датчиков, контроль резервного питания (АКБ) и оперативная техническая поддержка." %}</p></div></div>
     </div>
   </div>
 </section>
