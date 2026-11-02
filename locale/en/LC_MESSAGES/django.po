@@ -521,3 +521,329 @@ msgstr ""
 
 msgid "Здравствуйте! Хочу узнать стоимость установки охранной системы."
 msgstr "Hello! I'd like to know the cost of installing a security system."
+
+msgid "24/7 и реагирование"
+msgstr "24/7 monitoring and response"
+
+msgid "<span>от</span> <strong>{{ price }} ₸</strong>"
+msgstr "<span>from</span> <strong>{{ price }} ₸</strong>"
+
+msgid "CRM"
+msgstr "CRM"
+
+msgid ""
+"Берём на себя всё: от первого аудита и чистого монтажа до подключения к "
+"пультовой охране КҮЗЕТ и регулярного ТО."
+msgstr ""
+"We handle everything: from the initial audit and clean installation to KUZET"
+" central monitoring connection and ongoing maintenance."
+
+msgid "Бесплатный выезд инженера и смета по Алматы"
+msgstr "Free engineer site visit and estimate across Almaty"
+
+msgid ""
+"Бесплатный выезд инженера, аудит объекта и точный расчёт сметы. Аккуратный "
+"монтаж сигнализации, датчиков и камер под ключ."
+msgstr ""
+"Free engineer site visit, property audit and precise cost estimate. Neat, "
+"turnkey installation of alarms, sensors and cameras."
+
+msgid ""
+"Беспроводная сигнализация, датчики взлома и протечки, подключение к пульту "
+"КҮЗЕТ"
+msgstr ""
+"Wireless alarm, intrusion and flood sensors, connection to KUZET central "
+"monitoring"
+
+msgid "Двухфакторная защита"
+msgstr "Two-factor authentication"
+
+msgid "Доска"
+msgstr "Board"
+
+msgid "Доступы"
+msgstr "Permissions"
+
+msgid "Единый путь клиента"
+msgstr "Client journey"
+
+msgid "Заявка на подключение"
+msgstr "Connection request"
+
+msgid "Заявки"
+msgstr "Leads"
+
+msgid ""
+"Интеграция оборудования с пультом централизованного наблюдения КҮЗЕТ, "
+"настройка защищённых каналов связи и тестирование связи."
+msgstr ""
+"Integrating equipment with the KUZET central monitoring station, configuring"
+" secure communication channels and link testing."
+
+msgid "Интересующая услуга или задача"
+msgstr "Service of interest or task"
+
+msgid "История"
+msgstr "History"
+
+msgid "Комплексная безопасность (монтаж, пульт КҮЗЕТ, ТО)"
+msgstr "Comprehensive security (installation, KUZET monitoring, maintenance)"
+
+msgid ""
+"Комплексная безопасность в Алматы: монтаж оборудования, техническое "
+"обслуживание и подключение к пультовой охране КҮЗЕТ."
+msgstr ""
+"Comprehensive security in Almaty: equipment installation, maintenance and "
+"connection to KUZET central monitoring."
+
+msgid ""
+"Комплексная безопасность объекта — от монтажа до пультовой охраны КҮЗЕТ"
+msgstr ""
+"Integrated security for your facility — from installation to KUZET central "
+"monitoring"
+
+msgid ""
+"Комплексная безопасность: монтаж, техобслуживание и пультовая охрана КҮЗЕТ в"
+" Алматы"
+msgstr ""
+"Comprehensive security: installation, maintenance and KUZET monitoring in "
+"Almaty"
+
+msgid "Комплексные услуги безопасности"
+msgstr "Comprehensive security services"
+
+msgid "Комплексный подход"
+msgstr "Integrated approach"
+
+msgid "Контакты — комплексная безопасность и охрана КҮЗЕТ в Алматы"
+msgstr "Contacts — Comprehensive security and KUZET monitoring in Almaty"
+
+msgid "Контент сайта"
+msgstr "Website content"
+
+msgid ""
+"Круглосуточный приём и контроль сигналов с объекта дежурной сменой пульта "
+"КҮЗЕТ (проникновение, взлом, тревожная кнопка)."
+msgstr ""
+"24/7 alarm monitoring and signal control by the KUZET monitoring team "
+"(intrusion, tampering, panic button)."
+
+msgid "Мониторинг"
+msgstr "Monitoring"
+
+msgid ""
+"Мониторинг и реагирование мобильных групп обеспечивается уполномоченной "
+"охранной организацией КҮЗЕТ на основании договора на пультовую охрану."
+msgstr ""
+"Monitoring and mobile response unit dispatch are provided by an authorised "
+"KUZET security organisation under a central monitoring contract."
+
+msgid "Мониторинг тревожных сигналов"
+msgstr "Alarm signal monitoring"
+
+msgid ""
+"Мы не просто устанавливаем оборудование, а обеспечиваем непрерывную защиту "
+"объекта: от монтажа до круглосуточного мониторинга и сервисного "
+"сопровождения."
+msgstr ""
+"We do more than just install equipment; we deliver continuous protection: "
+"from installation to 24/7 monitoring and technical support."
+
+msgid "Надёжная безопасность на каждом этапе"
+msgstr "Reliable security at every step"
+
+msgid "Новые заявки"
+msgstr "New leads"
+
+msgid "Объект под охраной"
+msgstr "Facility secured"
+
+msgid "Организация выезда мобильной группы КҮЗЕТ по договору"
+msgstr "Mobile rapid response unit dispatch under contract"
+
+msgid ""
+"Оставьте заявку — инженер перезвонит, проконсультирует по оборудованию, "
+"подключению к пульту КҮЗЕТ и сервисному обслуживанию."
+msgstr ""
+"Leave a request — an engineer will call you back with advice on equipment, "
+"KUZET monitoring connection and maintenance plans."
+
+msgid "Охрана периметра, видеоаналитика, круглосуточный мониторинг КҮЗЕТ и ТО"
+msgstr ""
+"Perimeter security, video analytics, 24/7 KUZET monitoring and maintenance"
+
+msgid "ПЦН КҮЗЕТ · Мониторинг 24/7"
+msgstr "KUZET CMS · 24/7 Monitoring"
+
+msgid "Пакеты"
+msgstr "Packages"
+
+msgid "Переписка"
+msgstr "Chat"
+
+msgid ""
+"Периметр участка, уличные камеры, тревожная кнопка и пультовая охрана КҮЗЕТ"
+msgstr ""
+"Perimeter coverage, outdoor cameras, panic button and KUZET central "
+"monitoring"
+
+msgid ""
+"Плановые проверки датчиков, контроль резервного питания (АКБ) и оперативная "
+"техническая поддержка."
+msgstr ""
+"Scheduled sensor diagnostics, backup battery checks and prompt technical "
+"support."
+
+msgid ""
+"Подберём оборудование, рассчитаем смету и предложим подключение к пульту "
+"КҮЗЕТ"
+msgstr ""
+"We'll select the right equipment, calculate the estimate, and offer KUZET "
+"monitoring connection"
+
+msgid "Подбор и аккуратный монтаж оборудования за 1 день"
+msgstr "Equipment selection and neat installation in 1 day"
+
+msgid "Подбор и монтаж оборудования"
+msgstr "Equipment selection and installation"
+
+msgid "Подбор оборудования, подключение к КҮЗЕТ и план ТО"
+msgstr "Equipment selection, KUZET connection and maintenance plan"
+
+msgid "Подключение к ПЦН КҮЗЕТ"
+msgstr "Connection to KUZET monitoring"
+
+msgid ""
+"Подключение к пульту централизованного наблюдения и организация выезда "
+"мобильной группы по договору."
+msgstr ""
+"Connection to the central monitoring station and mobile response unit "
+"dispatch under contract."
+
+msgid "Подключение объекта к ПЦН КҮЗЕТ и мониторинг 24/7"
+msgstr "Connecting the facility to KUZET CMS and 24/7 monitoring"
+
+msgid "Подключить пультовую охрану"
+msgstr "Connect central monitoring"
+
+msgid "Полный цикл безопасности объекта — 5 этапов"
+msgstr "Complete facility security cycle — 5 stages"
+
+msgid ""
+"Полный цикл защиты объекта: от подбора датчиков и монтажа до подключения к "
+"пульту охраны КҮЗЕТ и регламентного ТО."
+msgstr ""
+"Full security lifecycle: from sensor selection and installation to KUZET "
+"monitoring and routine maintenance."
+
+msgid ""
+"При поступлении тревоги оператор пульта организует оперативный выезд экипажа"
+" мобильной группы КҮЗЕТ согласно договору."
+msgstr ""
+"Upon receiving an alarm, the dispatcher dispatches a KUZET rapid response "
+"mobile unit according to the contract."
+
+msgid ""
+"Проектируем оптимальную конфигурацию именно для вашего объекта без лишних "
+"переплат."
+msgstr ""
+"We design the optimal setup tailored specifically for your site with no "
+"unnecessary expenses."
+
+msgid "Профессиональный монтаж"
+msgstr "Professional installation"
+
+msgid "Пульт КҮЗЕТ"
+msgstr "KUZET monitoring"
+
+msgid "Пультовая охрана КҮЗЕТ"
+msgstr "KUZET central monitoring"
+
+msgid "Работа по договору с фиксированной стоимостью"
+msgstr "Fixed-price contract work"
+
+msgid "Рассчитаем комплексную безопасность вашего объекта"
+msgstr "We will calculate comprehensive security for your facility"
+
+msgid "Реагирование мобильной группы КҮЗЕТ"
+msgstr "KUZET mobile unit response"
+
+msgid ""
+"Регулярная диагностика датчиков, контроль резервного питания (АКБ), плановая"
+" профилактика и оперативный ремонт."
+msgstr ""
+"Routine sensor diagnostics, backup battery checks, preventative maintenance "
+"and fast repairs."
+
+msgid "Регулярное ТО и сервис"
+msgstr "Regular maintenance and service"
+
+msgid "Регулярное техническое обслуживание и поддержка"
+msgstr "Ongoing maintenance and technical support"
+
+msgid "Роли"
+msgstr "Roles"
+
+msgid ""
+"СКУД с учётом времени, видеонаблюдение, вывод на пульт КҮЗЕТ и договорное ТО"
+msgstr ""
+"Access control with time attendance, CCTV, KUZET monitoring link and "
+"scheduled maintenance"
+
+msgid "Сводка"
+msgstr "Dashboard"
+
+msgid "Сервис"
+msgstr "Service"
+
+msgid "Сотрудники"
+msgstr "Staff"
+
+msgid "Страницы"
+msgstr "Pages"
+
+msgid ""
+"Телефон, WhatsApp, Telegram и адрес. Консультация инженера, выезд по Алматы "
+"и пригородам."
+msgstr ""
+"Phone, WhatsApp, Telegram and office address. Engineer consultation, site "
+"visits across Almaty and suburbs."
+
+msgid "Техническое обслуживание и поддержка"
+msgstr "Maintenance and technical support"
+
+msgid ""
+"Тревожная кнопка экстренного вызова КҮЗЕТ, видеонаблюдение, ночная охрана"
+msgstr "KUZET panic alarm button, video surveillance and night-time security"
+
+msgid ""
+"Устанавливаем системы безопасности, подключаем объекты к ПЦН КҮЗЕТ и "
+"обеспечиваем техническое сопровождение. Мониторинг тревожных сигналов и "
+"реагирование мобильной группы осуществляются в соответствии с условиями "
+"договора охраны."
+msgstr ""
+"We install security systems, connect facilities to KUZET CMS and provide "
+"ongoing technical support. Alarm monitoring and mobile rapid response "
+"dispatches operate in full accordance with the security contract terms."
+
+msgid ""
+"Чистая установка без повреждения отделки, скрытая прокладка кабелей, точная "
+"юстировка датчиков."
+msgstr ""
+"Clean installation without damaging interiors, concealed cabling, and "
+"precise sensor calibration."
+
+msgid "от 1 дня под ключ"
+msgstr "turnkey from 1 day"
+
+msgid "от <strong>{{ price }} ₸</strong>"
+msgstr "from <strong>{{ price }} ₸</strong>"
+
+msgid "от {{ price }} ₸"
+msgstr "from {{ price }} ₸"
+
+msgid "подключение к ПЦН"
+msgstr "CMS connection"
+
+msgid "регламентное ТО"
+msgstr "scheduled maintenance"
