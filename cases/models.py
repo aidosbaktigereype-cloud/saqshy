@@ -1,7 +1,18 @@
 from django.db import models
+from django.templatetags.static import static
 from django.urls import reverse
 
 from services.models import Service, split_lines
+
+# Иллюстрации для кейсов без загруженного фото.
+DEFAULT_COVERS = {
+    "kvartira-bostandykskiy": "img/cases/apartment.svg",
+    "dom-nauryzbayskiy": "img/cases/house.svg",
+    "kofeynya-medeuskiy": "img/cases/coffee.svg",
+    "ofis-almalinskiy": "img/cases/office.svg",
+    "sklad-alatauskiy": "img/cases/warehouse.svg",
+    "butik-v-trc": "img/cases/boutique.svg",
+}
 
 
 class Case(models.Model):
@@ -35,6 +46,14 @@ class Case(models.Model):
     @property
     def equipment_list(self) -> list[str]:
         return split_lines(self.equipment)
+
+    @property
+    def cover_url(self) -> str:
+        """Загруженное фото, а если его нет — иллюстрация из статики."""
+        if self.image:
+            return self.image.url
+        cover = DEFAULT_COVERS.get(self.slug)
+        return static(cover) if cover else ""
 
     @property
     def main_service(self):

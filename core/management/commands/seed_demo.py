@@ -8,6 +8,8 @@ from core.models import Page
 from services.models import FAQ, Package, Service
 
 LANGS = [code for code, _ in settings.LANGUAGES]
+# Услуги, снятые с сайта. Не удаляем: на них могут ссылаться заявки.
+RETIRED_SERVICES = ["ohrannaya-signalizaciya"]
 
 
 def set_translated(obj, field: str, values: dict) -> None:
@@ -26,6 +28,9 @@ class Command(BaseCommand):
     @transaction.atomic
     def handle(self, *args, force: bool = False, **options):
         created = {"services": 0, "cases": 0, "pages": 0}
+
+        if force:
+            Service.objects.filter(slug__in=RETIRED_SERVICES).update(is_active=False)
 
         for order, data in enumerate(demo_data.SERVICES, start=1):
             service, is_new = Service.objects.get_or_create(slug=data["slug"], defaults={"title": data["title"]["ru"]})

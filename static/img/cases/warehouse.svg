@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Склад с уличными камерами и охраной периметра">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1730"/><stop offset="1" stop-color="#1a3155"/></linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5a524" stop-opacity=".34"/><stop offset="1" stop-color="#f5a524" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#s)"/>
+  <rect y="322" width="640" height="78" fill="#0a1426"/>
+  <!-- сектора -->
+  <path d="M68 92-30 330h220z" fill="url(#c)"/><path d="M572 92 450 330h220z" fill="url(#c)"/>
+  <!-- здание -->
+  <rect x="132" y="150" width="376" height="172" fill="#2d4a78"/>
+  <path d="M116 156 320 84l204 72z" fill="#16294a" stroke="#3a5684" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#26406a">
+    <rect x="160" y="198" width="92" height="124"/><rect x="274" y="198" width="92" height="124"/><rect x="388" y="198" width="92" height="124"/>
+  </g>
+  <g stroke="#1a3155" stroke-width="3">
+    <path d="M160 214h92M160 230h92M160 246h92M160 262h92M160 278h92M160 294h92M160 310h92"/>
+    <path d="M388 214h92M388 230h92M388 246h92M388 262h92M388 278h92M388 294h92M388 310h92"/>
+  </g>
+  <rect x="274" y="198" width="92" height="124" fill="#0e1b33"/>
+  <!-- стеллажи в открытых воротах -->
+  <g fill="#f5a524"><rect x="284" y="282" width="30" height="40"/><rect x="326" y="294" width="30" height="28"/></g>
+  <g fill="#f5c26b"><rect x="298" y="252" width="26" height="30"/></g>
+  <!-- столбы и камеры -->
+  <g fill="#3a5684"><rect x="62" y="94" width="10" height="228"/><rect x="568" y="94" width="10" height="228"/></g>
+  <g fill="#f4f6fa"><rect x="46" y="82" width="58" height="22" rx="6"/><rect x="536" y="82" width="58" height="22" rx="6"/></g>
+  <g fill="#0e1b33"><circle cx="94" cy="93" r="7"/><circle cx="546" cy="93" r="7"/></g>
+  <g fill="#d93a3a"><circle cx="94" cy="93" r="2.6"/><circle cx="546" cy="93" r="2.6"/></g>
+  <!-- периметр -->
+  <path d="M0 356h640" stroke="#12a594" stroke-width="4" stroke-dasharray="14 10"/>
+  <g fill="#12a594"><circle cx="64" cy="356" r="7"/><circle cx="320" cy="356" r="7"/><circle cx="576" cy="356" r="7"/></g>
+  <!-- фура -->
+  <g>
+    <rect x="-2" y="256" width="122" height="62" rx="3" fill="#f4f6fa"/>
+    <path d="M120 276h26l18 22v20h-44z" fill="#f5a524"/>
+    <path d="M126 282h16l11 16h-27z" fill="#16294a"/>
+    <circle cx="28" cy="322" r="11" fill="#0e1b33" stroke="#5e6b80" stroke-width="3"/><circle cx="136" cy="322" r="11" fill="#0e1b33" stroke="#5e6b80" stroke-width="3"/>
+  </g>
+</svg>

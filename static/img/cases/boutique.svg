@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Бутик в торговом центре с сигнализацией и камерами">
+  <defs>
+    <linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2f52"/><stop offset="1" stop-color="#0f1d36"/></linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d7cad" stop-opacity=".35"/><stop offset="1" stop-color="#5d7cad" stop-opacity=".08"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#w)"/>
+  <rect y="344" width="640" height="56" fill="#0a1426"/>
+  <rect y="342" width="640" height="4" fill="#3a5684"/>
+  <!-- фасад -->
+  <rect x="54" y="62" width="532" height="280" fill="#16294a" stroke="#3a5684" stroke-width="5"/>
+  <rect x="54" y="62" width="532" height="48" fill="#f5a524"/>
+  <!-- полосы козырька -->
+  <g fill="#e8950f"><rect x="94" y="62" width="40" height="48"/><rect x="174" y="62" width="40" height="48"/><rect x="254" y="62" width="40" height="48"/><rect x="334" y="62" width="40" height="48"/><rect x="414" y="62" width="40" height="48"/><rect x="494" y="62" width="40" height="48"/></g>
+  <!-- витрина -->
+  <rect x="78" y="130" width="296" height="212" fill="#0e1b33"/>
+  <path d="M110 164h232" stroke="#f4f6fa" stroke-width="5" stroke-linecap="round"/>
+  <!-- одежда на вешалках -->
+  <g>
+    <path d="M144 164v14M226 164v14M308 164v14" stroke="#f4f6fa" stroke-width="3"/>
+    <path d="M144 176 112 196l10 16 8-5v82h28v-82l8 5 10-16z" fill="#f5a524"/>
+    <path d="M226 176l-32 20 10 16 8-5v112h28V207l8 5 10-16z" fill="#f4f6fa"/>
+    <path d="M308 176l-32 20 10 16 8-5v82h28v-82l8 5 10-16z" fill="#12a594"/>
+  </g>
+  <rect x="78" y="130" width="296" height="212" fill="url(#g)" stroke="#5d7cad" stroke-width="4"/>
+  <path d="M120 342 214 130h46L166 342z" fill="#fff" opacity=".05"/>
+  <!-- дверь -->
+  <rect x="404" y="130" width="150" height="212" fill="#0e1b33" stroke="#5d7cad" stroke-width="4"/>
+  <rect x="404" y="130" width="150" height="212" fill="url(#g)"/>
+  <rect x="420" y="222" width="8" height="52" rx="4" fill="#f4f6fa"/>
+  <!-- датчик открытия двери -->
+  <rect x="464" y="118" width="46" height="18" rx="5" fill="#f4f6fa"/><circle cx="500" cy="127" r="3.6" fill="#12a594"/>
+  <!-- датчик разбития стекла -->
+  <circle cx="356" cy="150" r="13" fill="#f4f6fa"/><circle cx="356" cy="150" r="4.5" fill="#d93a3a"/>
+  <g fill="none" stroke="#f4f6fa" stroke-width="3" stroke-linecap="round"><path d="M332 134a30 30 0 0 0 0 32"/></g>
+  <!-- камера -->
+  <rect x="596" y="72" width="10" height="30" fill="#f4f6fa"/>
+  <rect x="552" y="96" width="62" height="24" rx="7" fill="#f4f6fa"/>
+  <circle cx="560" cy="108" r="7" fill="#0e1b33"/><circle cx="560" cy="108" r="2.6" fill="#d93a3a"/>
+  <path d="M552 112 402 342h204z" fill="#f5a524" opacity=".1"/>
+</svg>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Saqshy — дизайн-система сайта
+   Kuzet BAM — дизайн-система сайта
    Цвета и размеры — токены в :root. Меняйте бренд здесь, а не в компонентах.
    ========================================================================== */
 
@@ -97,6 +97,8 @@ p { margin: 0 0 1em; }
 .btn-outline:hover { border-color: var(--ink); }
 .btn-ghost-light { border-color: rgba(255, 255, 255, .28); color: #fff; }
 .btn-ghost-light:hover { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .5); }
+.btn-teal { background: var(--teal); color: #04201c; box-shadow: 0 8px 20px -10px rgba(18, 165, 148, .9); }
+.btn-teal:hover { filter: brightness(1.1); }
 .btn-wa { background: var(--wa); color: #fff; }
 .btn-wa:hover { filter: brightness(.95); }
 .btn-tg { background: var(--tg); color: #fff; }

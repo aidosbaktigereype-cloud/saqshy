@@ -15,9 +15,9 @@ SERVICES = [
         "slug": "ajax",
         "icon": "hub",
         "order": 1,
-        "price_from": 290000,
-        "title": T("Сигнализация AJAX", "AJAX дабылы", "AJAX alarm systems"),
-        "h1": T("Установка сигнализации AJAX в Алматы", "Алматыда AJAX дабылын орнату", "AJAX alarm installation in Almaty"),
+        "price_from": 100000,
+        "title": T("Сигнализация Ajax, RAPTOR, STEMAX, Dahua и т.д.", "Ajax, RAPTOR, STEMAX, Dahua және т.б. дабылдары", "Ajax, RAPTOR, STEMAX, Dahua and other alarm systems"),
+        "h1": T("Установка сигнализации Ajax, RAPTOR, STEMAX, Dahua в Казахстане", "Қазақстанда Ajax, RAPTOR, STEMAX, Dahua дабылдарын орнату", "Ajax, RAPTOR, STEMAX and Dahua alarm installation in Kazakhstan"),
         "offer": T(
             "Беспроводная охранная система с управлением со смартфона. Монтаж квартиры — за 1 день, без штробления стен.",
             "Смартфоннан басқарылатын сымсыз күзет жүйесі. Пәтерге монтаж — 1 күнде, қабырғаны ойып-бұзусыз.",
@@ -30,15 +30,15 @@ SERVICES = [
         ),
         "intro": T(
             "Ajax — беспроводная охранная система: хаб, датчики и сирены связываются по защищённому радиоканалу, поэтому монтаж проходит без прокладки кабелей и ремонта.\n\n"
-            "Мы приезжаем на объект, определяем уязвимые места, подбираем комплект и устанавливаем его. Настраиваем сценарии (например, «Ушёл из дома» одной кнопкой), подключаем приложение для всей семьи, организуем подключение к пульту централизованного наблюдения (ПЦН) КҮЗЕТ для реагирования мобильной группы по договору и берем систему на регулярное техническое обслуживание.",
+            "Мы приезжаем на объект, определяем уязвимые места, подбираем комплект и устанавливаем его. Настраиваем сценарии (например, «Ушёл из дома» одной кнопкой), подключаем приложение для всей семьи, организуем подключение к пульту централизованного наблюдения (ПЦН) KUZET для реагирования мобильной группы по договору и берем систему на регулярное техническое обслуживание.",
             "Ajax — сымсыз күзет жүйесі: хаб, датчиктер мен сиреналар қорғалған радиоарна арқылы байланысады, сондықтан монтаж кабель тартусыз және жөндеусіз өтеді.\n\n"
-            "Біз нысанға келіп, осал жерлерді анықтаймыз, жиынтықты таңдап, орнатамыз. Сценарийлерді баптаймыз (мысалы, бір батырмамен «Үйден шықтым»), бүкіл отбасына қосымшаны қосамыз, шарт бойынша жедел топтың әрекет етуі үшін КҮЗЕТ орталықтандырылған пультіне қосылуды ұйымдастырамыз және жүйені тұрақты техникалық қызметке аламыз.",
+            "Біз нысанға келіп, осал жерлерді анықтаймыз, жиынтықты таңдап, орнатамыз. Сценарийлерді баптаймыз (мысалы, бір батырмамен «Үйден шықтым»), бүкіл отбасына қосымшаны қосамыз, шарт бойынша жедел топтың әрекет етуі үшін KUZET орталықтандырылған пультіне қосылуды ұйымдастырамыз және жүйені тұрақты техникалық қызметке аламыз.",
             "Ajax is a wireless security system: the hub, sensors and sirens communicate over an encrypted radio channel, so installation needs no cabling or renovation.\n\n"
             "We visit the site, identify weak points, select a kit and install it. We set up automated scenarios, connect the mobile app, organise connection to the KUZET central monitoring station for mobile group response under contract, and provide ongoing technical maintenance.",
         ),
         "benefits": T(
-            "Монтаж без штробления и пыли\nУправление и тревоги в приложении\nРаботает при отключении света и интернета\nПодключение к пультовой охране КҮЗЕТ\nОрганизация выезда мобильной группы по договору\nРегулярное техническое обслуживание",
-            "Қабырғаны ойып-бұзусыз және шаңсыз монтаж\nҚосымшада басқару және дабылдар\nЖарық пен интернет өшсе де жұмыс істейді\nКҮЗЕТ пульттік күзетіне қосылу\nШарт бойынша жедел топтың шығуын ұйымдастыру\nТұрақты техникалық қызмет көрсету",
+            "Монтаж без штробления и пыли\nУправление и тревоги в приложении\nРаботает при отключении света и интернета\nПодключение к пультовой охране KUZET\nОрганизация выезда мобильной группы по договору\nРегулярное техническое обслуживание",
+            "Қабырғаны ойып-бұзусыз және шаңсыз монтаж\nҚосымшада басқару және дабылдар\nЖарық пен интернет өшсе де жұмыс істейді\nKUZET пульттік күзетіне қосылу\nШарт бойынша жедел топтың шығуын ұйымдастыру\nТұрақты техникалық қызмет көрсету",
             "No wall chasing, no dust\nControl and alerts in the app\nKeeps working during power and internet outages\nConnection to KUZET central monitoring\nMobile response team dispatched under contract\nOngoing preventative maintenance",
         ),
         "object_types": T(
@@ -47,18 +47,18 @@ SERVICES = [
             "Apartment\nHouse\nOffice\nShop\nCountry house",
         ),
         "seo_title": T(
-            "Установка сигнализации AJAX в Алматы — цены под ключ",
-            "Алматыда AJAX дабылын орнату — толық баға",
-            "AJAX Alarm Installation in Almaty — Turnkey Prices",
+            "Установка сигнализации Ajax, RAPTOR, STEMAX, Dahua в Казахстане — цены под ключ",
+            "Қазақстанда Ajax, RAPTOR, STEMAX, Dahua дабылдарын орнату — толық баға",
+            "Ajax, RAPTOR, STEMAX, Dahua Alarm Installation in Kazakhstan — Turnkey Prices",
         ),
         "seo_description": T(
-            "Монтаж беспроводной сигнализации Ajax в квартире, доме или офисе в Алматы. Комплекты от 290 000 ₸ с установкой, бесплатный выезд и смета.",
-            "Алматыдағы пәтерге, үйге немесе кеңсеге Ajax сымсыз дабылын орнату. Орнатумен бірге жиынтықтар 290 000 ₸-ден, тегін шығу және смета.",
-            "Wireless Ajax alarm installation for apartments, houses and offices in Almaty. Kits with installation from 290,000 ₸, free site visit and estimate.",
+            "Монтаж сигнализации Ajax, RAPTOR, STEMAX, Dahua в квартире, доме или офисе в Казахстане. Комплекты от 100 000 ₸ с установкой, бесплатный выезд и смета.",
+            "Қазақстандағы пәтерге, үйге немесе кеңсеге Ajax, RAPTOR, STEMAX, Dahua дабылдарын орнату. Орнатумен бірге жиынтықтар 100 000 ₸-ден, тегін шығу және смета.",
+            "Ajax, RAPTOR, STEMAX and Dahua alarm installation for apartments, houses and offices in Kazakhstan. Kits with installation from 100,000 ₸, free site visit and estimate.",
         ),
         "packages": [
             {
-                "price_from": 290000,
+                "price_from": 100000,
                 "is_popular": True,
                 "name": T("Квартира", "Пәтер", "Apartment"),
                 "items": T(
@@ -117,9 +117,9 @@ SERVICES = [
         "slug": "videonablyudenie",
         "icon": "camera",
         "order": 2,
-        "price_from": 220000,
+        "price_from": 80000,
         "title": T("Видеонаблюдение", "Бейнебақылау", "Video surveillance"),
-        "h1": T("Установка видеонаблюдения в Алматы под ключ", "Алматыда бейнебақылауды толық орнату", "Turnkey CCTV installation in Almaty"),
+        "h1": T("Установка видеонаблюдения в Казахстане под ключ", "Қазақстанда бейнебақылауды толық орнату", "Turnkey CCTV installation in Kazakhstan"),
         "offer": T(
             "IP-камеры 4 Мп с записью в архив и просмотром со смартфона. Подберём камеры под каждую зону и смонтируем за 1–2 дня.",
             "Мұрағатқа жазатын және смартфоннан көруге болатын 4 Мп IP-камералар. Әр аймаққа камера таңдап, 1–2 күнде орнатамыз.",
@@ -149,18 +149,18 @@ SERVICES = [
             "House\nShop\nCafé and restaurant\nOffice\nWarehouse\nEntrance and parking",
         ),
         "seo_title": T(
-            "Установка видеонаблюдения в Алматы — цены на камеры под ключ",
-            "Алматыда бейнебақылау орнату — камералардың толық бағасы",
-            "CCTV Installation in Almaty — Turnkey Camera Prices",
+            "Установка видеонаблюдения в Казахстане — цены на камеры под ключ",
+            "Қазақстанда бейнебақылау орнату — камералардың толық бағасы",
+            "CCTV Installation in Kazakhstan — Turnkey Camera Prices",
         ),
         "seo_description": T(
-            "Монтаж IP-камер видеонаблюдения для дома, магазина и офиса в Алматы. 4 камеры с регистратором от 220 000 ₸, просмотр с телефона.",
-            "Алматыда үйге, дүкенге және кеңсеге бейнебақылау IP-камераларын орнату. Тіркеуіші бар 4 камера 220 000 ₸-ден, телефоннан көру.",
-            "IP CCTV installation for homes, shops and offices in Almaty. 4 cameras with a recorder from 220,000 ₸, viewing from your phone.",
+            "Монтаж IP-камер видеонаблюдения для дома, магазина и офиса в Казахстане. Видеонаблюдение под ключ от 80 000 ₸, просмотр с телефона.",
+            "Қазақстанда үйге, дүкенге және кеңсеге бейнебақылау IP-камераларын орнату. Толық бейнебақылау 80 000 ₸-ден, телефоннан көру.",
+            "IP CCTV installation for homes, shops and offices in Kazakhstan. Turnkey CCTV from 80,000 ₸, viewing from your phone.",
         ),
         "packages": [
             {
-                "price_from": 220000,
+                "price_from": 80000,
                 "is_popular": True,
                 "name": T("4 камеры", "4 камера", "4 cameras"),
                 "items": T(
@@ -219,12 +219,12 @@ SERVICES = [
         "slug": "skud",
         "icon": "access",
         "order": 3,
-        "price_from": 120000,
+        "price_from": 300000,
         "title": T("СКУД", "Кіруді бақылау (СКУД)", "Access control"),
         "h1": T(
-            "Установка СКУД в Алматы — контроль доступа и учёт времени",
-            "Алматыда кіруді бақылау жүйесін (СКУД) орнату",
-            "Access control installation in Almaty",
+            "Установка СКУД в Казахстане — контроль доступа и учёт времени",
+            "Қазақстанда кіруді бақылау жүйесін (СКУД) орнату",
+            "Access control installation in Kazakhstan",
         ),
         "offer": T(
             "Доступ по картам, отпечатку или лицу, учёт рабочего времени и журнал проходов. От одной двери до бизнес-центра.",
@@ -255,18 +255,18 @@ SERVICES = [
             "Office\nBusiness centre\nFactory\nWarehouse\nResidential complex\nFitness club",
         ),
         "seo_title": T(
-            "Установка СКУД в Алматы — системы контроля доступа под ключ",
-            "Алматыда СКУД орнату — кіруді бақылау жүйелері",
-            "Access Control Installation in Almaty — Turnkey Systems",
+            "Установка СКУД в Казахстане — системы контроля доступа под ключ",
+            "Қазақстанда СКУД орнату — кіруді бақылау жүйелері",
+            "Access Control Installation in Kazakhstan — Turnkey Systems",
         ),
         "seo_description": T(
-            "Монтаж СКУД в Алматы: электронные замки, карты, Face ID, турникеты и учёт рабочего времени. Одна дверь под ключ — от 120 000 ₸.",
-            "Алматыда СКУД монтажы: электрондық құлыптар, карталар, Face ID, турникеттер және жұмыс уақытын есепке алу. Бір есік — 120 000 ₸-ден.",
-            "Access control in Almaty: electronic locks, cards, Face ID, turnstiles and time tracking. One door, turnkey, from 120,000 ₸.",
+            "Монтаж СКУД в Казахстане: электронные замки, карты, Face ID, турникеты и учёт рабочего времени. Одна дверь под ключ — от 300 000 ₸.",
+            "Қазақстанда СКУД монтажы: электрондық құлыптар, карталар, Face ID, турникеттер және жұмыс уақытын есепке алу. Бір есік — 300 000 ₸-ден.",
+            "Access control in Kazakhstan: electronic locks, cards, Face ID, turnstiles and time tracking. One door, turnkey, from 300,000 ₸.",
         ),
         "packages": [
             {
-                "price_from": 120000,
+                "price_from": 300000,
                 "is_popular": True,
                 "name": T("1 дверь", "1 есік", "1 door"),
                 "items": T(
@@ -314,101 +314,12 @@ SERVICES = [
         ],
     },
     {
-        "slug": "ohrannaya-signalizaciya",
-        "icon": "alarm",
-        "order": 4,
-        "price_from": 150000,
-        "title": T("Охранная сигнализация", "Күзет дабылы", "Intruder alarm"),
-        "h1": T(
-            "Охранная сигнализация в Алматы: GSM и проводные системы",
-            "Алматыда күзет дабылы: GSM және сымды жүйелер",
-            "Intruder alarm systems in Almaty: GSM and wired",
-        ),
-        "offer": T(
-            "Проводные и GSM-системы с SMS-оповещением и выводом на пульт охраны. Решения для квартир, домов, складов и производств.",
-            "SMS-хабарламасы бар және күзет пультіне шығатын сымды және GSM-жүйелер. Пәтерлерге, үйлерге, қоймаларға және өндіріске арналған шешімдер.",
-            "Wired and GSM systems with SMS alerts and monitoring-station connection. For apartments, houses, warehouses and factories.",
-        ),
-        "summary": T(
-            "Проводные и GSM-сигнализации, охрана периметра и вывод на пульт охранной компании.",
-            "Сымды және GSM-дабылдар, периметрді күзету және күзет компаниясының пультіне шығару.",
-            "Wired and GSM alarms, perimeter protection and connection to a monitoring station.",
-        ),
-        "intro": T(
-            "Не всем объектам нужна беспроводная система. Для складов, производств и больших участков часто надёжнее и дешевле проводная сигнализация: она не зависит от батареек и выдерживает любые расстояния.\n\n"
-            "Мы проектируем зоны охраны, прокладываем линии, устанавливаем приборы и подключаем GSM-оповещение. По желанию подключаем систему к пульту охранной компании — тогда на тревогу приедет группа реагирования.",
-            "Әр нысанға сымсыз жүйе қажет емес. Қоймалар, өндіріс орындары және үлкен аумақтар үшін сымды дабыл көбіне сенімдірек әрі арзанырақ: ол батареяға тәуелді емес және кез келген қашықтыққа шыдайды.\n\n"
-            "Біз күзет аймақтарын жобалаймыз, желілерді тартамыз, құрылғыларды орнатамыз және GSM-хабарлауды қосамыз. Қаласаңыз, жүйені күзет компаниясының пультіне қосамыз — сонда дабыл кезінде жедел топ келеді.",
-            "Not every site needs a wireless system. For warehouses, factories and large plots, a wired alarm is often more reliable and cheaper: it doesn't depend on batteries and covers any distance.\n\n"
-            "We design security zones, run the lines, install the panels and set up GSM alerts. Optionally we connect the system to a security company's monitoring — a response team will come on alarm.",
-        ),
-        "benefits": T(
-            "SMS и звонок при тревоге\nОхрана периметра участка\nВывод на пульт охранной компании\nРезервное питание\nНадёжность на больших объектах\nОбслуживание и проверка системы",
-            "Дабыл кезінде SMS және қоңырау\nУчаске периметрін күзету\nКүзет компаниясының пультіне шығару\nРезервтік қуат\nҮлкен нысандарда сенімділік\nЖүйеге қызмет көрсету және тексеру",
-            "SMS and call on alarm\nPerimeter protection\nConnection to a monitoring station\nBackup power\nReliable on large sites\nMaintenance and testing",
-        ),
-        "object_types": T(
-            "Квартира\nЧастный дом\nСклад\nПроизводство\nГараж",
-            "Пәтер\nЖеке үй\nҚойма\nӨндіріс\nГараж",
-            "Apartment\nHouse\nWarehouse\nFactory\nGarage",
-        ),
-        "seo_title": T(
-            "Охранная сигнализация в Алматы — установка GSM и проводных систем",
-            "Алматыда күзет дабылы — GSM және сымды жүйелерді орнату",
-            "Intruder Alarm Installation in Almaty — GSM and Wired",
-        ),
-        "seo_description": T(
-            "Установка охранной сигнализации для квартиры, дома и склада в Алматы. GSM-сигнализация от 150 000 ₸, вывод на пульт охраны.",
-            "Алматыда пәтерге, үйге және қоймаға күзет дабылын орнату. GSM-дабыл 150 000 ₸-ден, күзет пультіне шығару.",
-            "Intruder alarm installation for apartments, houses and warehouses in Almaty. GSM alarms from 150,000 ₸, monitoring connection.",
-        ),
-        "packages": [
-            {
-                "price_from": 150000,
-                "is_popular": True,
-                "name": T("GSM, квартира", "GSM, пәтер", "GSM, apartment"),
-                "items": T(
-                    "Панель с GSM\n3–4 датчика\nСирена\nSMS-оповещения\nМонтаж и настройка",
-                    "GSM панелі\n3–4 датчик\nСирена\nSMS-хабарламалар\nМонтаж және баптау",
-                    "GSM panel\n3–4 sensors\nSiren\nSMS alerts\nInstallation and setup",
-                ),
-            },
-            {
-                "price_from": 350000,
-                "name": T("Дом / склад", "Үй / қойма", "House / warehouse"),
-                "items": T(
-                    "Проводная система\nОхрана периметра\nВывод на пульт охраны\nРезервное питание\nМонтаж и настройка",
-                    "Сымды жүйе\nПериметрді күзету\nКүзет пультіне шығару\nРезервтік қуат\nМонтаж және баптау",
-                    "Wired system\nPerimeter protection\nMonitoring connection\nBackup power\nInstallation and setup",
-                ),
-            },
-        ],
-        "faqs": [
-            (
-                T("Чем это отличается от AJAX?", "AJAX-тан айырмашылығы неде?", "How is this different from AJAX?"),
-                T(
-                    "AJAX — беспроводная система с приложением. Проводная сигнализация выгоднее на больших объектах и там, где нужно много датчиков на улице. Подскажем, что лучше для вас.",
-                    "AJAX — қосымшасы бар сымсыз жүйе. Сымды дабыл үлкен нысандарда және сыртта көп датчик қажет жерде тиімдірек. Сізге қайсысы жақсы екенін айтамыз.",
-                    "AJAX is a wireless system with an app. A wired alarm is more cost-effective on large sites and where many outdoor sensors are needed. We'll advise what suits you.",
-                ),
-            ),
-            (
-                T("Нужен ли договор с охранной компанией?", "Күзет компаниясымен шарт керек пе?", "Do I need a contract with a security company?"),
-                T(
-                    "Нет, система может просто оповещать вас по SMS и звонком. Пульт охраны подключается по желанию.",
-                    "Жоқ, жүйе сізге жай ғана SMS пен қоңырау арқылы хабарлай алады. Күзет пульті қалауыңыз бойынша қосылады.",
-                    "No, the system can simply notify you by SMS and call. Monitoring is optional.",
-                ),
-            ),
-        ],
-    },
-    {
         "slug": "slabotochnye-sistemy",
         "icon": "network",
-        "order": 5,
-        "price_from": 7000,
+        "order": 4,
+        "price_from": 100000,
         "title": T("Слаботочные системы", "Әлсіз ток жүйелері", "Low-voltage systems"),
-        "h1": T("Монтаж слаботочных систем и ЛВС в Алматы", "Алматыда әлсіз ток жүйелері мен ЖЕЖ монтажы", "Low-voltage and LAN installation in Almaty"),
+        "h1": T("Монтаж слаботочных систем и ЛВС в Казахстане", "Қазақстанда әлсіз ток жүйелері мен ЖЕЖ монтажы", "Low-voltage and LAN installation in Kazakhstan"),
         "offer": T(
             "Локальные сети, Wi-Fi, телефония, домофоны и кабельные трассы. Проектируем, монтируем и сдаём с тестированием каждой линии.",
             "Жергілікті желілер, Wi-Fi, телефония, домофондар және кабель трассалары. Жобалаймыз, орнатамыз және әр желіні тестілеп тапсырамыз.",
@@ -438,25 +349,24 @@ SERVICES = [
             "Office\nHouse\nShop\nWarehouse\nRestaurant",
         ),
         "seo_title": T(
-            "Монтаж слаботочных систем в Алматы — ЛВС, Wi-Fi, СКС",
-            "Алматыда әлсіз ток жүйелерін орнату — ЖЕЖ, Wi-Fi",
-            "Low-Voltage Installation in Almaty — LAN, Wi-Fi, Cabling",
+            "Монтаж слаботочных систем в Казахстане — ЛВС, Wi-Fi, СКС",
+            "Қазақстанда әлсіз ток жүйелерін орнату — ЖЕЖ, Wi-Fi",
+            "Low-Voltage Installation in Kazakhstan — LAN, Wi-Fi, Cabling",
         ),
         "seo_description": T(
-            "Проектирование и монтаж локальных сетей, Wi-Fi, телефонии и домофонов в Алматы. Точка ЛВС под ключ — от 7 000 ₸.",
-            "Алматыда жергілікті желілерді, Wi-Fi, телефония мен домофондарды жобалау және орнату. ЖЕЖ нүктесі — 7 000 ₸-ден.",
-            "Design and installation of LAN, Wi-Fi, telephony and intercoms in Almaty. A LAN point, turnkey, from 7,000 ₸.",
+            "Проектирование и монтаж локальных сетей, Wi-Fi, телефонии и домофонов в Казахстане. Монтаж под ключ — от 100 000 ₸.",
+            "Қазақстанда жергілікті желілерді, Wi-Fi, телефония мен домофондарды жобалау және орнату. Толық монтаж — 100 000 ₸-ден.",
+            "Design and installation of LAN, Wi-Fi, telephony and intercoms in Kazakhstan. Turnkey installation from 100,000 ₸.",
         ),
         "packages": [
             {
-                "price_from": 7000,
+                "price_from": 100000,
                 "is_popular": True,
-                "name": T("Точка ЛВС", "ЖЕЖ нүктесі", "LAN point"),
-                "price_note": T("за точку", "бір нүкте үшін", "per point"),
+                "name": T("Небольшая сеть", "Шағын желі", "Small network"),
                 "items": T(
-                    "Кабель до 30 м\nРозетка RJ-45\nКроссировка в шкафу\nТестирование линии",
-                    "30 м-ге дейін кабель\nRJ-45 розеткасы\nШкафта кросстау\nЖеліні тестілеу",
-                    "Cable up to 30 m\nRJ-45 socket\nPatching in the rack\nLine testing",
+                    "Кабельные линии\nРозетки RJ-45\nКроссировка в шкафу\nТестирование линий",
+                    "Кабель желілері\nRJ-45 розеткалары\nШкафта кросстау\nЖелілерді тестілеу",
+                    "Cable lines\nRJ-45 sockets\nPatching in the rack\nLine testing",
                 ),
             },
             {
@@ -474,9 +384,9 @@ SERVICES = [
             (
                 T("Сколько стоит монтаж сети в офисе?", "Кеңседе желі орнату қанша тұрады?", "How much does office cabling cost?"),
                 T(
-                    "Считаем по числу точек и длине трасс. Ориентир — от 7 000 ₸ за точку под ключ; точную смету дадим после бесплатного замера.",
-                    "Нүктелер саны мен трасса ұзындығына қарай есептейміз. Бағдар — бір нүкте 7 000 ₸-ден; нақты сметаны тегін өлшеуден кейін береміз.",
-                    "We price by the number of points and route length. Guide price: from 7,000 ₸ per point turnkey; exact estimate after a free survey.",
+                    "Считаем по числу точек и длине трасс. Ориентир — от 100 000 ₸ за монтаж под ключ; точную смету дадим после бесплатного замера.",
+                    "Нүктелер саны мен трасса ұзындығына қарай есептейміз. Бағдар — толық монтаж 100 000 ₸-ден; нақты сметаны тегін өлшеуден кейін береміз.",
+                    "We price by the number of points and route length. Guide price: from 100,000 ₸ for turnkey installation; exact estimate after a free survey.",
                 ),
             ),
         ],
@@ -487,9 +397,9 @@ GENERAL_FAQS = [
     (
         T("Сколько стоит выезд и смета?", "Шығу мен смета қанша тұрады?", "How much does a site visit and estimate cost?"),
         T(
-            "Бесплатно по Алматы. В пригороды (Талгар, Каскелен, Отеген батыр) — тоже бесплатно при заказе монтажа.",
-            "Алматы бойынша тегін. Қала маңына (Талғар, Қаскелең, Өтеген батыр) — монтажға тапсырыс берсеңіз, бұл да тегін.",
-            "Free within Almaty. Suburbs (Talgar, Kaskelen, Otegen Batyr) are also free if you order installation.",
+            "Бесплатно по всему Казахстану.",
+            "Бүкіл Қазақстан бойынша тегін.",
+            "Free across Kazakhstan.",
         ),
     ),
     (
@@ -621,7 +531,7 @@ CASES = [
     },
     {
         "slug": "sklad-alatauskiy",
-        "services": ["videonablyudenie", "ohrannaya-signalizaciya"],
+        "services": ["videonablyudenie"],
         "amount": 1900000,
         "order": 5,
         "title": T("Склад: 16 камер и охрана периметра", "Қойма: 16 камера және периметр күзеті", "Warehouse: 16 cameras and perimeter alarm"),
@@ -678,26 +588,26 @@ def pages(brand: str) -> list[dict]:
             "slug": "o-kompanii",
             "title": T("О компании", "Компания туралы", "About us"),
             "lead": T(
-                f"{brand} — команда инженеров-монтажников из Алматы. Устанавливаем охранные системы, видеонаблюдение, СКУД и слаботочные сети.",
-                f"{brand} — Алматыдағы инженер-монтаждаушылар командасы. Күзет жүйелерін, бейнебақылауды, СКУД пен әлсіз ток желілерін орнатамыз.",
-                f"{brand} is a team of installation engineers in Almaty. We install security systems, CCTV, access control and low-voltage networks.",
+                f"{brand} — команда инженеров-монтажников по всему Казахстану. Устанавливаем охранные системы, видеонаблюдение, СКУД и слаботочные сети.",
+                f"{brand} — Қазақстандағы инженер-монтаждаушылар командасы. Күзет жүйелерін, бейнебақылауды, СКУД пен әлсіз ток желілерін орнатамыз.",
+                f"{brand} is a team of installation engineers in Kazakhstan. We install security systems, CCTV, access control and low-voltage networks.",
             ),
             "body": T(
                 "<h2>Чем мы занимаемся</h2><p>Проектируем и монтируем системы безопасности для квартир, домов, офисов, магазинов и складов. "
-                "Работаем с беспроводными системами Ajax, IP-видеонаблюдением, контролем доступа и кабельными сетями.</p>"
+                "Работаем с беспроводными и проводными системами, IP-видеонаблюдением, контролем доступа и кабельными сетями.</p>"
                 "<h2>Как мы работаем</h2><ul><li>Бесплатный выезд и смета до начала работ</li><li>Договор с фиксированной ценой</li>"
                 "<li>Аккуратный монтаж и уборка после себя</li><li>Обучение и поддержка после установки</li></ul>"
-                "<h2>Где работаем</h2><p>Алматы и пригороды: Талгар, Каскелен, Отеген батыр, Боралдай и другие населённые пункты Алматинской области.</p>",
+                "<h2>Где работаем</h2><p>По всему Казахстану: в любом городе есть монтажные бригады, инженеры, техники и KUZET.</p>",
                 "<h2>Немен айналысамыз</h2><p>Пәтерлерге, үйлерге, кеңселерге, дүкендер мен қоймаларға қауіпсіздік жүйелерін жобалап, орнатамыз. "
-                "Ajax сымсыз жүйелерімен, IP-бейнебақылаумен, кіруді бақылаумен және кабель желілерімен жұмыс істейміз.</p>"
+                "Сымсыз және сымды жүйелермен, IP-бейнебақылаумен, кіруді бақылаумен және кабель желілерімен жұмыс істейміз.</p>"
                 "<h2>Қалай жұмыс істейміз</h2><ul><li>Жұмыс басталғанға дейін тегін шығу және смета</li><li>Бекітілген бағамен шарт</li>"
                 "<li>Мұқият монтаж және соңынан жинастыру</li><li>Орнатқаннан кейін оқыту және қолдау</li></ul>"
-                "<h2>Қай жерде жұмыс істейміз</h2><p>Алматы және қала маңы: Талғар, Қаскелең, Өтеген батыр, Боралдай және Алматы облысының басқа елді мекендері.</p>",
+                "<h2>Қай жерде жұмыс істейміз</h2><p>Бүкіл Қазақстан бойынша: кез келген қалада монтаж бригадалары, инженерлер, техниктер және KUZET бар.</p>",
                 "<h2>What we do</h2><p>We design and install security systems for apartments, houses, offices, shops and warehouses. "
-                "We work with Ajax wireless systems, IP video surveillance, access control and structured cabling.</p>"
+                "We work with wireless and wired systems, IP video surveillance, access control and structured cabling.</p>"
                 "<h2>How we work</h2><ul><li>Free site visit and estimate before any work</li><li>Fixed-price contract</li>"
                 "<li>Neat installation and clean-up afterwards</li><li>Training and support after installation</li></ul>"
-                "<h2>Where we work</h2><p>Almaty and its suburbs: Talgar, Kaskelen, Otegen Batyr, Boralday and other towns of the Almaty region.</p>",
+                "<h2>Where we work</h2><p>All over Kazakhstan: installation crews, engineers, technicians and KUZET are available in every city.</p>",
             ),
         },
         {
