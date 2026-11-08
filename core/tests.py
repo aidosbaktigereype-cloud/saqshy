@@ -16,9 +16,9 @@ class PublicPagesTests(TestCase):
                     self.assertEqual(response.status_code, 200)
 
     def test_language_is_applied(self):
-        self.assertContains(self.client.get("/kk/ajax/"), "Алматыда AJAX дабылын орнату")
-        self.assertContains(self.client.get("/en/ajax/"), "AJAX alarm installation in Almaty")
-        self.assertContains(self.client.get("/ajax/"), "Установка сигнализации AJAX в Алматы")
+        self.assertContains(self.client.get("/kk/ajax/"), "Қазақстанда Ajax, RAPTOR, STEMAX, Dahua дабылдарын орнату")
+        self.assertContains(self.client.get("/en/ajax/"), "Ajax, RAPTOR, STEMAX and Dahua alarm installation in Kazakhstan")
+        self.assertContains(self.client.get("/ajax/"), "Установка сигнализации Ajax, RAPTOR, STEMAX, Dahua в Казахстане")
 
     @override_settings(SITE_URL="https://example.kz")
     def test_seo_tags(self):

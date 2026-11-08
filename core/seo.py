@@ -25,7 +25,7 @@ def local_business() -> dict:
             "streetAddress": brand["address"],
             "addressCountry": "KZ",
         },
-        "areaServed": {"@type": "City", "name": "Almaty"},
+        "areaServed": {"@type": "Country", "name": "Kazakhstan"},
     }
     same_as = [f"https://t.me/{brand['telegram']}"]
     if brand.get("instagram"):
@@ -66,7 +66,7 @@ def service(service_obj) -> dict:
         "name": service_obj.h1,
         "description": service_obj.seo_description or service_obj.summary,
         "provider": {"@id": absolute("/#business")},
-        "areaServed": {"@type": "City", "name": "Almaty"},
+        "areaServed": {"@type": "Country", "name": "Kazakhstan"},
         "url": absolute(service_obj.get_absolute_url()),
     }
     if service_obj.price_from:

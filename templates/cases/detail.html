@@ -15,7 +15,7 @@
 <section class="section section-top-0">
   <div class="container case-layout">
     <div class="prose">
-      {% if case.image %}<img class="case-photo" src="{{ case.image.url }}" alt="{{ case.title }}" width="960" height="600">{% endif %}
+      {% if case.cover_url %}<img class="case-photo" src="{{ case.cover_url }}" alt="{{ case.title }}" width="960" height="600">{% endif %}
       <h2>{% translate "Задача" %}</h2>
       {{ case.task|linebreaks }}
       <h2>{% translate "Что сделали" %}</h2>

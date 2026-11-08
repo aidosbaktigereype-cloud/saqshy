@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Квартира с датчиками сигнализации">
+  <defs>
+    <linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16294a"/><stop offset="1" stop-color="#0e1b33"/></linearGradient>
+    <linearGradient id="n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22426f"/><stop offset="1" stop-color="#f5a524" stop-opacity=".35"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#w)"/>
+  <rect y="318" width="640" height="82" fill="#0a1426"/>
+  <rect y="316" width="640" height="4" fill="#26406a"/>
+  <!-- окно -->
+  <rect x="60" y="62" width="176" height="176" rx="6" fill="url(#n)" stroke="#3a5684" stroke-width="6"/>
+  <path d="M148 62v176M60 150h176" stroke="#3a5684" stroke-width="5"/>
+  <rect x="60" y="62" width="176" height="176" rx="6" fill="none" stroke="#3a5684" stroke-width="6"/>
+  <g fill="#0e1b33" opacity=".9"><rect x="74" y="178" width="30" height="58"/><rect x="112" y="156" width="26" height="80"/><rect x="160" y="170" width="28" height="66"/><rect x="194" y="190" width="30" height="46"/></g>
+  <!-- датчик открытия на окне -->
+  <rect x="222" y="124" width="22" height="42" rx="5" fill="#f4f6fa"/><circle cx="233" cy="136" r="3.5" fill="#12a594"/>
+  <!-- диван -->
+  <rect x="300" y="238" width="266" height="62" rx="16" fill="#2d4a78"/>
+  <rect x="316" y="198" width="234" height="62" rx="14" fill="#38598e"/>
+  <rect x="284" y="226" width="40" height="78" rx="14" fill="#2d4a78"/><rect x="542" y="226" width="40" height="78" rx="14" fill="#2d4a78"/>
+  <rect x="316" y="300" width="14" height="20" fill="#16294a"/><rect x="536" y="300" width="14" height="20" fill="#16294a"/>
+  <rect x="344" y="210" width="56" height="42" rx="10" fill="#f5a524"/>
+  <!-- хаб с сигналом -->
+  <rect x="396" y="72" width="62" height="62" rx="14" fill="#f4f6fa"/>
+  <circle cx="427" cy="103" r="9" fill="#12a594"/>
+  <g fill="none" stroke="#12a594" stroke-width="4" stroke-linecap="round">
+    <path d="M472 84a30 30 0 0 1 0 38"/><path d="M486 72a50 50 0 0 1 0 62"/><path d="M382 84a30 30 0 0 0 0 38"/><path d="M368 72a50 50 0 0 0 0 62"/>
+  </g>
+  <!-- датчик движения -->
+  <path d="M582 42h40v28a20 20 0 0 1-40 0z" fill="#f4f6fa"/><circle cx="602" cy="70" r="8" fill="#16294a"/><circle cx="602" cy="70" r="3" fill="#d93a3a"/>
+  <path d="M602 92 500 300h170z" fill="#f5a524" opacity=".12"/>
+  <!-- смартфон -->
+  <rect x="44" y="266" width="58" height="104" rx="10" fill="#0a1426" stroke="#f4f6fa" stroke-width="4"/>
+  <rect x="52" y="278" width="42" height="78" rx="3" fill="#16294a"/>
+  <path d="M73 292l15 6v12c0 10-7 18-15 21-8-3-15-11-15-21v-12z" fill="#12a594"/>
+  <path d="m66 309 5 5 10-11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='service',
             name='icon',
-            field=models.CharField(choices=[('hub', 'Хаб / AJAX'), ('camera', 'Камера'), ('access', 'Доступ / СКУД'), ('alarm', 'Сирена / сигнализация'), ('network', 'Сеть / слаботочка'), ('shield', 'Пультовая охрана / КҮЗЕТ'), ('wrench', 'Техническое обслуживание')], default='hub', max_length=20, verbose_name='Иконка'),
+            field=models.CharField(choices=[('hub', 'Хаб / AJAX'), ('camera', 'Камера'), ('access', 'Доступ / СКУД'), ('alarm', 'Сирена / сигнализация'), ('network', 'Сеть / слаботочка'), ('shield', 'Пультовая охрана / KUZET'), ('wrench', 'Техническое обслуживание')], default='hub', max_length=20, verbose_name='Иконка'),
         ),
     ]

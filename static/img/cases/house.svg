@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Частный дом с уличными камерами">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1730"/><stop offset="1" stop-color="#1d3660"/></linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5a524" stop-opacity=".38"/><stop offset="1" stop-color="#f5a524" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#s)"/>
+  <circle cx="548" cy="70" r="30" fill="#f4f6fa"/><circle cx="560" cy="62" r="26" fill="#0d1a34"/>
+  <g fill="#f4f6fa"><circle cx="90" cy="50" r="2"/><circle cx="170" cy="86" r="1.6"/><circle cx="290" cy="40" r="2"/><circle cx="420" cy="74" r="1.6"/><circle cx="610" cy="130" r="2"/><circle cx="46" cy="120" r="1.6"/></g>
+  <path d="M0 330h640v70H0z" fill="#0a1426"/>
+  <!-- сектора камер -->
+  <path d="M170 184 20 340h210z" fill="url(#c)"/>
+  <path d="M470 184 410 340h210z" fill="url(#c)"/>
+  <!-- дом -->
+  <rect x="170" y="176" width="300" height="154" fill="#2d4a78"/>
+  <path d="M140 182 320 72l180 110z" fill="#16294a" stroke="#3a5684" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="396" y="88" width="30" height="58" fill="#26406a"/>
+  <rect x="290" y="236" width="62" height="94" rx="4" fill="#0e1b33"/><circle cx="340" cy="286" r="4" fill="#f5a524"/>
+  <g fill="#f5c26b" stroke="#16294a" stroke-width="4"><rect x="200" y="214" width="62" height="58" rx="3"/><rect x="380" y="214" width="62" height="58" rx="3"/></g>
+  <path d="M231 214v58M200 243h62M411 214v58M380 243h62" stroke="#16294a" stroke-width="3"/>
+  <!-- камеры -->
+  <g>
+    <rect x="166" y="170" width="10" height="16" fill="#f4f6fa"/><rect x="140" y="178" width="44" height="20" rx="6" fill="#f4f6fa"/><circle cx="146" cy="188" r="6" fill="#0e1b33"/><circle cx="146" cy="188" r="2.4" fill="#d93a3a"/>
+    <rect x="464" y="170" width="10" height="16" fill="#f4f6fa"/><rect x="456" y="178" width="44" height="20" rx="6" fill="#f4f6fa"/><circle cx="494" cy="188" r="6" fill="#0e1b33"/><circle cx="494" cy="188" r="2.4" fill="#d93a3a"/>
+  </g>
+  <!-- забор -->
+  <g fill="#1a3155">
+    <rect x="0" y="302" width="150" height="8"/><rect x="490" y="302" width="150" height="8"/><rect x="0" y="322" width="150" height="8"/><rect x="490" y="322" width="150" height="8"/>
+    <rect x="18" y="288" width="12" height="46"/><rect x="62" y="288" width="12" height="46"/><rect x="106" y="288" width="12" height="46"/><rect x="514" y="288" width="12" height="46"/><rect x="558" y="288" width="12" height="46"/><rect x="602" y="288" width="12" height="46"/>
+  </g>
+  <!-- щит -->
+  <circle cx="320" cy="134" r="26" fill="#12a594"/>
+  <path d="m309 134 8 8 15-16" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
