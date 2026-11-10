@@ -16,7 +16,10 @@
   <meta property="og:url" content="{{ CANONICAL }}">
   <meta property="og:image" content="{{ SITE_URL }}{% static 'img/og.png' %}">
   <meta property="og:locale" content="{% if LANG == 'kk' %}kk_KZ{% elif LANG == 'en' %}en_US{% else %}ru_RU{% endif %}">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0b1b30">
+  {% if ANALYTICS.google_verification %}<meta name="google-site-verification" content="{{ ANALYTICS.google_verification }}">{% endif %}
+  {% if ANALYTICS.yandex_verification %}<meta name="yandex-verification" content="{{ ANALYTICS.yandex_verification }}">{% endif %}
   <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

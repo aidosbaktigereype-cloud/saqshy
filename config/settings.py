@@ -158,7 +158,7 @@ LEAD_NOTIFY_EMAILS = env_list("LEAD_NOTIFY_EMAILS")
 
 # --- Бренд и контакты (подтягиваются из конфига) -------------------------
 BRAND = {
-    "name": env("BRAND_NAME", "Kuzet BAM"),
+    "name": env("BRAND_NAME", "KUZET BM"),
     "phone": env("CONTACT_PHONE", "+7 707 884 19 22"),
     "whatsapp": env("CONTACT_WHATSAPP", "77078841922"),
     "telegram": env("CONTACT_TELEGRAM", "saqshy_kz"),
@@ -184,6 +184,9 @@ ANALYTICS = {
     "metrika": env("YANDEX_METRIKA_ID"),
     "gads": env("GOOGLE_ADS_ID"),
     "gads_lead_label": env("GOOGLE_ADS_LEAD_LABEL"),
+    # Коды подтверждения прав на сайт (мета-теги из Google Search Console и Яндекс Вебмастера)
+    "google_verification": env("GOOGLE_SITE_VERIFICATION"),
+    "yandex_verification": env("YANDEX_VERIFICATION"),
 }
 
 # --- Telegram ------------------------------------------------------------

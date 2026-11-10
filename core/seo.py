@@ -18,6 +18,7 @@ def local_business() -> dict:
         "telephone": brand["phone"],
         "email": brand["email"],
         "image": absolute("/static/img/og.png"),
+        "logo": absolute("/static/img/favicon.svg"),
         "priceRange": "₸₸",
         "address": {
             "@type": "PostalAddress",
