@@ -30,16 +30,16 @@ SERVICES = [
         ),
         "intro": T(
             "Ajax — беспроводная охранная система: хаб, датчики и сирены связываются по защищённому радиоканалу, поэтому монтаж проходит без прокладки кабелей и ремонта.\n\n"
-            "Мы приезжаем на объект, определяем уязвимые места, подбираем комплект и устанавливаем его. Настраиваем сценарии (например, «Ушёл из дома» одной кнопкой), подключаем приложение для всей семьи, организуем подключение к пульту централизованного наблюдения (ПЦН) KUZET для реагирования мобильной группы по договору и берем систему на регулярное техническое обслуживание.",
+            "Мы приезжаем на объект, определяем уязвимые места, подбираем комплект и устанавливаем его. Настраиваем сценарии (например, «Ушёл из дома» одной кнопкой), подключаем приложение для всей семьи, организуем подключение к пульту централизованного наблюдения (ПЦН) КУЗЕТ для реагирования мобильной группы по договору и берем систему на регулярное техническое обслуживание.",
             "Ajax — сымсыз күзет жүйесі: хаб, датчиктер мен сиреналар қорғалған радиоарна арқылы байланысады, сондықтан монтаж кабель тартусыз және жөндеусіз өтеді.\n\n"
-            "Біз нысанға келіп, осал жерлерді анықтаймыз, жиынтықты таңдап, орнатамыз. Сценарийлерді баптаймыз (мысалы, бір батырмамен «Үйден шықтым»), бүкіл отбасына қосымшаны қосамыз, шарт бойынша жедел топтың әрекет етуі үшін KUZET орталықтандырылған пультіне қосылуды ұйымдастырамыз және жүйені тұрақты техникалық қызметке аламыз.",
+            "Біз нысанға келіп, осал жерлерді анықтаймыз, жиынтықты таңдап, орнатамыз. Сценарийлерді баптаймыз (мысалы, бір батырмамен «Үйден шықтым»), бүкіл отбасына қосымшаны қосамыз, шарт бойынша жедел топтың әрекет етуі үшін КҮЗЕТ орталықтандырылған пультіне қосылуды ұйымдастырамыз және жүйені тұрақты техникалық қызметке аламыз.",
             "Ajax is a wireless security system: the hub, sensors and sirens communicate over an encrypted radio channel, so installation needs no cabling or renovation.\n\n"
-            "We visit the site, identify weak points, select a kit and install it. We set up automated scenarios, connect the mobile app, organise connection to the KUZET central monitoring station for mobile group response under contract, and provide ongoing technical maintenance.",
+            "We visit the site, identify weak points, select a kit and install it. We set up automated scenarios, connect the mobile app, organise connection to the KUZET (Security) central monitoring station for mobile group response under contract, and provide ongoing technical maintenance.",
         ),
         "benefits": T(
-            "Монтаж без штробления и пыли\nУправление и тревоги в приложении\nРаботает при отключении света и интернета\nПодключение к пультовой охране KUZET\nОрганизация выезда мобильной группы по договору\nРегулярное техническое обслуживание",
-            "Қабырғаны ойып-бұзусыз және шаңсыз монтаж\nҚосымшада басқару және дабылдар\nЖарық пен интернет өшсе де жұмыс істейді\nKUZET пульттік күзетіне қосылу\nШарт бойынша жедел топтың шығуын ұйымдастыру\nТұрақты техникалық қызмет көрсету",
-            "No wall chasing, no dust\nControl and alerts in the app\nKeeps working during power and internet outages\nConnection to KUZET central monitoring\nMobile response team dispatched under contract\nOngoing preventative maintenance",
+            "Монтаж без штробления и пыли\nУправление и тревоги в приложении\nРаботает при отключении света и интернета\nПодключение к пультовой охране КУЗЕТ\nОрганизация выезда мобильной группы по договору\nРегулярное техническое обслуживание",
+            "Қабырғаны ойып-бұзусыз және шаңсыз монтаж\nҚосымшада басқару және дабылдар\nЖарық пен интернет өшсе де жұмыс істейді\nКҮЗЕТ пульттік күзетіне қосылу\nШарт бойынша жедел топтың шығуын ұйымдастыру\nТұрақты техникалық қызмет көрсету",
+            "No wall chasing, no dust\nControl and alerts in the app\nKeeps working during power and internet outages\nConnection to KUZET (Security) central monitoring\nMobile response team dispatched under contract\nOngoing preventative maintenance",
         ),
         "object_types": T(
             "Квартира\nЧастный дом\nОфис\nМагазин\nДача",
@@ -597,17 +597,17 @@ def pages(brand: str) -> list[dict]:
                 "Работаем с беспроводными и проводными системами, IP-видеонаблюдением, контролем доступа и кабельными сетями.</p>"
                 "<h2>Как мы работаем</h2><ul><li>Бесплатный выезд и смета до начала работ</li><li>Договор с фиксированной ценой</li>"
                 "<li>Аккуратный монтаж и уборка после себя</li><li>Обучение и поддержка после установки</li></ul>"
-                "<h2>Где работаем</h2><p>По всему Казахстану: в любом городе есть монтажные бригады, инженеры, техники и KUZET.</p>",
+                "<h2>Где работаем</h2><p>По всему Казахстану: в любом городе есть монтажные бригады, инженеры, техники и КУЗЕТ.</p>",
                 "<h2>Немен айналысамыз</h2><p>Пәтерлерге, үйлерге, кеңселерге, дүкендер мен қоймаларға қауіпсіздік жүйелерін жобалап, орнатамыз. "
                 "Сымсыз және сымды жүйелермен, IP-бейнебақылаумен, кіруді бақылаумен және кабель желілерімен жұмыс істейміз.</p>"
                 "<h2>Қалай жұмыс істейміз</h2><ul><li>Жұмыс басталғанға дейін тегін шығу және смета</li><li>Бекітілген бағамен шарт</li>"
                 "<li>Мұқият монтаж және соңынан жинастыру</li><li>Орнатқаннан кейін оқыту және қолдау</li></ul>"
-                "<h2>Қай жерде жұмыс істейміз</h2><p>Бүкіл Қазақстан бойынша: кез келген қалада монтаж бригадалары, инженерлер, техниктер және KUZET бар.</p>",
+                "<h2>Қай жерде жұмыс істейміз</h2><p>Бүкіл Қазақстан бойынша: кез келген қалада монтаж бригадалары, инженерлер, техниктер және КҮЗЕТ бар.</p>",
                 "<h2>What we do</h2><p>We design and install security systems for apartments, houses, offices, shops and warehouses. "
                 "We work with wireless and wired systems, IP video surveillance, access control and structured cabling.</p>"
                 "<h2>How we work</h2><ul><li>Free site visit and estimate before any work</li><li>Fixed-price contract</li>"
                 "<li>Neat installation and clean-up afterwards</li><li>Training and support after installation</li></ul>"
-                "<h2>Where we work</h2><p>All over Kazakhstan: installation crews, engineers, technicians and KUZET are available in every city.</p>",
+                "<h2>Where we work</h2><p>All over Kazakhstan: installation crews, engineers, technicians and KUZET (Security) are available in every city.</p>",
             ),
         },
         {

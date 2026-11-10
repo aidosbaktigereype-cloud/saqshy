@@ -27,7 +27,7 @@
     <div class="field">
       <label for="{{ form_id }}-service">{% translate "Интересующая услуга или задача" %}</label>
       <select id="{{ form_id }}-service" name="service">
-        <option value="">{% translate "Комплексная безопасность (монтаж, пульт KUZET, ТО)" %}</option>
+        <option value="">{% translate "Комплексная безопасность (монтаж, пульт КУЗЕТ, ТО)" %}</option>
         {% for s in NAV_SERVICES %}<option value="{{ s.slug }}">{{ s.title }}</option>{% endfor %}
       </select>
     </div>

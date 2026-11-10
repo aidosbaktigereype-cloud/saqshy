@@ -13,7 +13,7 @@ class Service(models.Model):
         ACCESS = "access", "Доступ / СКУД"
         ALARM = "alarm", "Сирена / сигнализация"
         NETWORK = "network", "Сеть / слаботочка"
-        SHIELD = "shield", "Пультовая охрана / KUZET"
+        SHIELD = "shield", "Пультовая охрана / КУЗЕТ"
         WRENCH = "wrench", "Техническое обслуживание"
 
     slug = models.SlugField("URL", unique=True, help_text="Латиницей, например: ajax")

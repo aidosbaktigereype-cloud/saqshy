@@ -25,7 +25,7 @@
   --wa: #1fa855;
   --tg: #2a9ed8;
 
-  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
   --radius-sm: 10px;
   --radius: 16px;
   --radius-lg: 24px;
@@ -51,7 +51,7 @@ body {
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; cursor: pointer; }
-h1, h2, h3, h4 { margin: 0 0 .5em; line-height: 1.15; letter-spacing: -.02em; font-weight: 800; }
+h1, h2, h3, h4 { margin: 0 0 .5em; line-height: 1.15; letter-spacing: -.01em; font-weight: 600; }
 h1 { font-size: clamp(2rem, 4.2vw, 3.25rem); }
 h2 { font-size: clamp(1.6rem, 3vw, 2.35rem); }
 h3, .h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
@@ -97,8 +97,8 @@ p { margin: 0 0 1em; }
 .btn-outline:hover { border-color: var(--ink); }
 .btn-ghost-light { border-color: rgba(255, 255, 255, .28); color: #fff; }
 .btn-ghost-light:hover { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .5); }
-.btn-teal { background: var(--teal); color: #04201c; box-shadow: 0 8px 20px -10px rgba(18, 165, 148, .9); }
-.btn-teal:hover { filter: brightness(1.1); }
+.btn-teal { background: #25d366; color: #fff; box-shadow: 0 8px 20px -10px rgba(37, 211, 102, .9); }
+.btn-teal:hover { background: #1ebe5a; }
 .btn-wa { background: var(--wa); color: #fff; }
 .btn-wa:hover { filter: brightness(.95); }
 .btn-tg { background: var(--tg); color: #fff; }
@@ -123,7 +123,7 @@ a:hover > .link-arrow .icon, .link-arrow:hover .icon { transform: translateX(3px
   border-bottom: 1px solid var(--line);
 }
 .header-row { display: flex; align-items: center; gap: 28px; height: 100%; }
-.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.3rem; letter-spacing: -.03em; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; letter-spacing: .06em; }
 .logo-mark {
   display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 11px;
   background: linear-gradient(140deg, var(--navy-800), var(--navy-950)); color: var(--accent);
@@ -270,7 +270,7 @@ a:hover > .link-arrow .icon, .link-arrow:hover .icon { transform: translateX(3px
 .section-soft .step { background: #fff; }
 .step::before {
   content: "0" counter(step); position: absolute; top: 22px; right: 24px;
-  font-size: 2.2rem; font-weight: 800; color: var(--line-strong); letter-spacing: -.04em;
+  font-size: 2.2rem; font-weight: 700; color: var(--line-strong); letter-spacing: -.02em;
 }
 .step-icon { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--accent); color: var(--accent-ink); margin-bottom: 18px; }
 .step p { margin: 0; color: var(--muted); font-size: .95rem; }
