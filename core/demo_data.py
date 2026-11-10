@@ -16,7 +16,7 @@ SERVICES = [
         "icon": "hub",
         "order": 1,
         "price_from": 100000,
-        "title": T("Сигнализация Ajax, RAPTOR, STEMAX, Dahua и т.д.", "Ajax, RAPTOR, STEMAX, Dahua және т.б. дабылдары", "Ajax, RAPTOR, STEMAX, Dahua and other alarm systems"),
+        "title": T("Сигнализация Ajax, RAPTOR, STEMAX, Dahua и другие", "Ajax, RAPTOR, STEMAX, Dahua және басқа дабылдар", "Ajax, RAPTOR, STEMAX, Dahua and other alarm systems"),
         "h1": T("Установка сигнализации Ajax, RAPTOR, STEMAX, Dahua в Казахстане", "Қазақстанда Ajax, RAPTOR, STEMAX, Dahua дабылдарын орнату", "Ajax, RAPTOR, STEMAX and Dahua alarm installation in Kazakhstan"),
         "offer": T(
             "Беспроводная охранная система с управлением со смартфона. Монтаж квартиры — за 1 день, без штробления стен.",
