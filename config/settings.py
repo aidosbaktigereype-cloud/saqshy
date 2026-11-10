@@ -161,7 +161,7 @@ BRAND = {
     "name": env("BRAND_NAME", "KUZET BM"),
     "phone": env("CONTACT_PHONE", "+7 707 884 19 22"),
     "whatsapp": env("CONTACT_WHATSAPP", "77078841922"),
-    "telegram": env("CONTACT_TELEGRAM", "saqshy_kz"),
+    "telegram": env("CONTACT_TELEGRAM", "saqshy_kz_bot"),
     "email": env("CONTACT_EMAIL", "info@example.kz"),
     "city": env("CONTACT_CITY", "Алматы"),
     "address": env("CONTACT_ADDRESS", "Алматы"),
